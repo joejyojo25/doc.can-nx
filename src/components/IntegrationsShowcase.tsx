@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Zap, Wifi, Radio, Lock, Camera, Wind, Plug, Car, Video, Network, Droplets, Waves, Home, Speaker, Bell, Server, MessageSquare } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import logo from 'figma:asset/348a1b6c3d5d7ac002eb03f6562c9a4b5d60b371.png';
+import logo from 'figma:asset/919ef30138c882ec49118640f7395b4d213df19e.png';
 
 const integrations = [
   { name: '2N', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },

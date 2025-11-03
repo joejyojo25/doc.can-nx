@@ -89,6 +89,14 @@ export function Hero() {
                 <Play className="w-5 h-5" />
                 Voir les vidéos
               </Button>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#cd2653] to-[#cd2653]/90 hover:from-[#cd2653]/90 hover:to-[#cd2653] text-white gap-2 shadow-lg shadow-[#cd2653]/30"
+                onClick={() => window.open('https://calendly.com/can-nx-marketing/demo', '_blank')}
+              >
+                Demander une démo
+                <ArrowRight className="w-5 h-5" />
+              </Button>
             </motion.div>
 
             {/* Trust indicators */}

@@ -13,9 +13,12 @@ import { Footer } from './components/Footer';
 import { FAQ } from './components/FAQ';
 import { KloudnxPage } from './pages/KloudnxPage';
 import { KloudnxSubscriptionPage } from './pages/KloudnxSubscriptionPage';
+import { ChartnxPage } from './pages/ChartnxPage';
+import { BossnxPage } from './pages/BossnxPage';
 import { PoolnxPage } from './pages/PoolnxPage';
 import { EmergynxPage } from './pages/EmergynxPage';
 import { InfiniKnxPage } from './pages/InfiniKnxPage';
+import { InfiniKnxConfiguratorPage } from './pages/InfiniKnxConfiguratorPage';
 import { ModnxPage } from './pages/ModnxPage';
 import { SpeaknxPage } from './pages/SpeaknxPage';
 import { BlogPage } from './pages/BlogPage';
@@ -107,6 +110,30 @@ export default function App() {
     );
   }
 
+  if (currentPage === 'chartnx') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>
+          <ChartnxPage />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'bossnx') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>
+          <BossnxPage />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (currentPage === 'poolnx') {
     return (
       <div className="min-h-screen bg-white">
@@ -137,6 +164,18 @@ export default function App() {
         <Header />
         <main>
           <InfiniKnxPage />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'infinix-configurator') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>
+          <InfiniKnxConfiguratorPage />
         </main>
         <Footer />
       </div>

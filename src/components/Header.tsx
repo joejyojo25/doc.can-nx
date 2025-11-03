@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown, ShoppingCart, Cloud, Cpu, Zap, Droplet, BarChart3, MessageSquare, Cog, Home, Plug, Wifi, DoorOpen, Shield, Camera, Music, Phone, Server, Lock, Waves, Radio, Headphones, FileText, Video, HelpCircle, Network, Bell } from 'lucide-react';
+import { Menu, X, ChevronDown, ShoppingCart, Cloud, Cpu, Zap, Droplet, BarChart3, MessageSquare, Cog, Home, Plug, Wifi, DoorOpen, Shield, Camera, Music, Phone, Server, Lock, Waves, Radio, Headphones, FileText, Video, HelpCircle, Network, Bell, Building2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
@@ -114,8 +114,34 @@ const integrations = [
 ];
 
 const services = [
-  { name: "Kloud'nX Abonnements", href: '#kloudnx-subscription', description: 'Abonnements cloud mensuels et annuels' },
-  { name: "Kloud'nX Licences", href: '#kloudnx-licences', description: 'Licences logicielles perpétuelles' },
+  { 
+    name: "Kloud'nX Abonnements", 
+    href: '#kloudnx-subscription', 
+    description: 'Abonnements cloud mensuels et annuels',
+    icon: Cloud
+  },
+  { 
+    name: "Kloud'nX Licences", 
+    description: 'Licences logicielles pour Kloud\'nX',
+    icon: Shield,
+    subItems: [
+      {
+        name: "Chart'nX",
+        href: '#chartnx',
+        description: 'Supervision énergétique intuitive',
+        icon: BarChart3,
+        color: 'emerald'
+      },
+      {
+        name: "Boss'nX",
+        href: '#bossnx',
+        description: 'Building Operating Smart System',
+        icon: Building2,
+        color: 'blue',
+        badge: 'Premium'
+      }
+    ]
+  },
 ];
 
 const support = [
@@ -256,20 +282,84 @@ export function Header() {
               </button>
               
               {activeDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
-                  <div className="p-4">
+                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                  <div className="p-4 space-y-2">
                     {services.map((service) => (
-                      <a
-                        key={service.name}
-                        href={service.href}
-                        className="block p-3 rounded-lg hover:bg-gray-50 transition-all"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <div className="text-gray-900 hover:text-[#0CB14B] transition-colors">
-                          {service.name}
-                        </div>
-                        <p className="text-sm text-gray-500 mt-1">{service.description}</p>
-                      </a>
+                      <div key={service.name}>
+                        {service.href ? (
+                          // Service avec lien direct
+                          <a
+                            href={service.href}
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-all"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {service.icon && (
+                              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0CB14B]/10 to-[#cd2653]/10 flex items-center justify-center flex-shrink-0">
+                                <service.icon className="w-5 h-5 text-[#0CB14B]" />
+                              </div>
+                            )}
+                            <div>
+                              <div className="text-gray-900 hover:text-[#0CB14B] transition-colors">
+                                {service.name}
+                              </div>
+                              <p className="text-sm text-gray-500 mt-1">{service.description}</p>
+                            </div>
+                          </a>
+                        ) : (
+                          // Service avec sous-items (Licences)
+                          <div className="space-y-2">
+                            <div className="flex items-start gap-3 p-3">
+                              {service.icon && (
+                                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/10 to-purple-500/10 flex items-center justify-center flex-shrink-0">
+                                  <service.icon className="w-5 h-5 text-indigo-600" />
+                                </div>
+                              )}
+                              <div>
+                                <div className="text-gray-900 font-medium">
+                                  {service.name}
+                                </div>
+                                <p className="text-sm text-gray-500 mt-1">{service.description}</p>
+                              </div>
+                            </div>
+                            
+                            {/* Sub-items */}
+                            {service.subItems && (
+                              <div className="ml-4 pl-4 border-l-2 border-gray-200 space-y-1">
+                                {service.subItems.map((subItem) => (
+                                  <a
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    className={`group flex items-start gap-3 p-3 rounded-lg hover:bg-gradient-to-br transition-all ${
+                                      subItem.color === 'emerald' 
+                                        ? 'hover:from-emerald-50 hover:to-teal-50 hover:border-emerald-200' 
+                                        : 'hover:from-blue-50 hover:to-indigo-50 hover:border-blue-200'
+                                    } border border-transparent`}
+                                    onClick={() => setActiveDropdown(null)}
+                                  >
+                                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br flex items-center justify-center flex-shrink-0 ${
+                                      subItem.color === 'emerald'
+                                        ? 'from-emerald-500 to-teal-600'
+                                        : 'from-blue-500 to-indigo-600'
+                                    }`}>
+                                      <subItem.icon className="w-4 h-4 text-white" />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-2">
+                                        <span className={`text-gray-900 group-hover:transition-colors ${
+                                          subItem.color === 'emerald' ? 'group-hover:text-emerald-600' : 'group-hover:text-blue-600'
+                                        }`}>
+                                          {subItem.name}
+                                        </span>
+                                      </div>
+                                      <p className="text-xs text-gray-500 mt-0.5">{subItem.description}</p>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -423,14 +513,42 @@ export function Header() {
                 <div className="px-4 py-2 font-medium text-gray-900">Services</div>
                 <div className="pl-8 space-y-2">
                   {services.map((service) => (
-                    <a
-                      key={service.name}
-                      href={service.href}
-                      className="block px-4 py-2 text-gray-600 hover:text-[#0CB14B]"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {service.name}
-                    </a>
+                    <div key={service.name}>
+                      {service.href ? (
+                        // Service avec lien direct
+                        <a
+                          href={service.href}
+                          className="block px-4 py-2 text-gray-600 hover:text-[#0CB14B]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {service.name}
+                        </a>
+                      ) : (
+                        // Service avec sous-items (Licences)
+                        <div>
+                          <div className="px-4 py-2 text-gray-700 font-medium">
+                            {service.name}
+                          </div>
+                          {service.subItems && (
+                            <div className="pl-8 space-y-1">
+                              {service.subItems.map((subItem) => (
+                                <a
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  className={`flex items-center gap-2 px-4 py-2 text-gray-600 hover:${
+                                    subItem.color === 'emerald' ? 'text-emerald-600' : 'text-blue-600'
+                                  }`}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  <subItem.icon className="w-4 h-4" />
+                                  <span>{subItem.name}</span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
