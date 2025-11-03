@@ -1,12 +1,24 @@
 import { motion } from 'motion/react';
-import { Plug, Lock, Cloud, Check, ArrowRight, Share2, ShoppingCart, FileText } from 'lucide-react';
+import { Plug, Lock, Cloud, Check, ArrowRight, Share2, ShoppingCart, FileText, Zap, Users, Globe, Award, TrendingUp } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { FAQ } from '../components/FAQ';
-import { useState } from 'react';
+import { ScrollProgress } from '../components/ScrollProgress';
+import { StickyCTA } from '../components/StickyCTA';
+import { LiveStats, defaultProductStats } from '../components/LiveStats';
+import { CertificationBadges } from '../components/CertificationBadges';
+import { InteractiveGallery } from '../components/InteractiveGallery';
+import { ProductStickyNav } from '../components/ProductStickyNav';
+import { VolumePricing } from '../components/VolumePricing';
+import { ProductConfigurator } from '../components/ProductConfigurator';
+import { CompatibilityChecker } from '../components/CompatibilityChecker';
+import { CustomerTestimonials } from '../components/CustomerTestimonials';
+import { TechnicalDocumentation } from '../components/TechnicalDocumentation';
+import { DistributorLocator } from '../components/DistributorLocator';
+import { ProductBreadcrumb } from '../components/ProductBreadcrumb';
 import kloudnxFront from 'figma:asset/f4e7e08a8f77640a41e6d024869598c4050d7f0d.png';
 import kloudnxAngle from 'figma:asset/b1a83fc3c8a20ae4448c96116d5ab85ce70f55e4.png';
 import kloudnxSoftware from 'figma:asset/0ad69f26920e083e2815589ec32d14e3617409ee.png';
@@ -59,14 +71,14 @@ const features = [
 ];
 
 const technicalSpecs = [
-  'KNX TP, S-Mode (ETS), 30v, 5mA',
-  'Ethernet : 10/100Mbps',
-  'Alimentation : 9-30v DC, 2W',
-  'Température de fonctionnement : -25°/+55°C',
-  'Dimensions : Rail Din – 2 modules – 35mm',
-  'Fabriqué en Europe',
-  "Nombre de connexions : jusqu'à 12 connexions tunneling",
-  'Garantie 2 ans',
+  { icon: Zap, label: 'KNX TP, S-Mode (ETS)', value: '30v, 5mA' },
+  { icon: Globe, label: 'Ethernet', value: '10/100Mbps' },
+  { icon: Plug, label: 'Alimentation', value: '9-30v DC, 2W' },
+  { icon: TrendingUp, label: 'Température', value: '-25°/+55°C' },
+  { icon: Award, label: 'Dimensions', value: 'Rail Din – 2 modules – 35mm' },
+  { icon: Globe, label: 'Fabrication', value: 'Fabriqué en Europe' },
+  { icon: Users, label: 'Connexions', value: "jusqu'à 12 tunneling" },
+  { icon: Check, label: 'Garantie', value: '2 ans' },
 ];
 
 const partners = [
@@ -114,25 +126,65 @@ const pricingPlans = [
   },
 ];
 
+const galleryImages = [
+  { src: kloudnxAngle, alt: "Kloud'nX - Vue d'ensemble", caption: 'Module KNX Rail DIN compact' },
+  { src: kloudnxFront, alt: "Kloud'nX - Détails techniques", caption: 'Interface KNX avec indicateurs LED' },
+  { src: kloudnxSoftware, alt: "Kloud'nX - Interface logicielle", caption: 'Interface cloud complète' },
+];
+
+const navItems = [
+  { id: 'features', label: 'Caractéristiques' },
+  { id: 'gallery', label: 'Galerie' },
+  { id: 'why-kloudnx', label: 'Pourquoi Kloud\'nX' },
+  { id: 'specs', label: 'Spécifications' },
+  { id: 'pricing', label: 'Tarifs' },
+  { id: 'configurator', label: 'Configurateur' },
+  { id: 'compatibility', label: 'Compatibilité' },
+  { id: 'testimonials', label: 'Témoignages' },
+  { id: 'documentation', label: 'Documentation' },
+  { id: 'distributors', label: 'Distributeurs' },
+  { id: 'faq', label: 'FAQ' },
+];
+
 export function KloudnxPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <ScrollProgress />
+      <ProductStickyNav items={navItems} />
+      <StickyCTA 
+        productName="Kloud'nX - Routeur KNX-IoT" 
+        shopUrl="https://can-nx.shop/11-modulaire/22-passerelle-kloudn-x-routeur-knx-vpn-cloud.html"
+        docsUrl="https://doc.can-nx.com/"
+      />
+
+      {/* Hero Section with Parallax */}
+      <section className="relative min-h-[80vh] flex flex-col overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"
-            animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+            animate={{ 
+              x: [0, 50, 0], 
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1]
+            }}
             transition={{ duration: 8, repeat: Infinity }}
           />
           <motion.div
             className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"
-            animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
+            animate={{ 
+              x: [0, -50, 0], 
+              y: [0, -30, 0],
+              scale: [1, 1.2, 1]
+            }}
             transition={{ duration: 10, repeat: Infinity }}
           />
         </div>
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        {/* Breadcrumb at top */}
+        <ProductBreadcrumb productName="Kloud'nX" className="relative" />
+
+        {/* Hero Content */}
+        <div className="relative flex-1 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center py-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -147,12 +199,12 @@ export function KloudnxPage() {
           </motion.div>
 
           <motion.div
-            className="max-w-2xl mx-auto"
+            className="max-w-2xl mx-auto mb-12"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 group hover:scale-105 transition-transform duration-500">
               <ImageWithFallback
                 src={kloudnxAngle}
                 alt="Kloud'nX - Routeur KNX IoT"
@@ -160,38 +212,74 @@ export function KloudnxPage() {
               />
             </div>
           </motion.div>
+
+          {/* Live Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <LiveStats stats={defaultProductStats} />
+          </motion.div>
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-16 bg-white">
+      {/* Key Features with Glassmorphism */}
+      <section id="features" className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+              Caractéristiques principales
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
+                className="group relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ y: -8 }}
               >
-                <Card className="p-8 h-full hover:shadow-xl transition-shadow">
-                  <div
-                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6`}
-                  >
-                    <feature.icon className="w-8 h-8 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0CB14B]/10 to-[#cd2653]/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                
+                <div className="relative bg-white/80 backdrop-blur-sm p-8 lg:p-10 rounded-3xl border border-gray-200/50 shadow-lg group-hover:shadow-2xl group-hover:border-[#0CB14B]/30 transition-all duration-500 h-full">
+                  <div className="relative inline-flex mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0CB14B] to-[#cd2653] rounded-2xl blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                    <motion.div 
+                      className={`relative flex items-center justify-center w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl shadow-lg`}
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
+                    >
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </motion.div>
                   </div>
-                  <h3 className="text-2xl mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </Card>
+
+                  <h3 className="text-2xl lg:text-3xl mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-[#0CB14B] group-hover:to-[#0a9940] transition-all duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    {feature.description}
+                  </p>
+
+                  <div className="absolute top-6 right-6 w-20 h-20 bg-gradient-to-br from-[#0CB14B]/5 to-[#cd2653]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Product Gallery */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* Interactive Product Gallery */}
+      <section id="gallery" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -199,77 +287,34 @@ export function KloudnxPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl mb-4">Découvrez Kloud'nX</h2>
+            <h2 className="text-4xl sm:text-5xl mb-4">Galerie Produit</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Matériel professionnel et interface logicielle intuitive
             </p>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto">
-            <Tabs defaultValue="product" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8">
-                <TabsTrigger value="product">Produit</TabsTrigger>
-                <TabsTrigger value="details">Détails</TabsTrigger>
-                <TabsTrigger value="software">Interface</TabsTrigger>
-              </TabsList>
+          <InteractiveGallery images={galleryImages} />
+        </div>
+      </section>
 
-              <TabsContent value="product">
-                <motion.div
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 md:p-12"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <ImageWithFallback
-                    src={kloudnxAngle}
-                    alt="Kloud'nX - Vue d'ensemble"
-                    className="w-full h-auto max-w-2xl mx-auto drop-shadow-lg"
-                  />
-                  <p className="text-center text-gray-600 mt-6">
-                    Module KNX Rail DIN compact - Connexions KNX, Ethernet et Alimentation
-                  </p>
-                </motion.div>
-              </TabsContent>
+      {/* Certification Badges */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Certifications & Qualité</h2>
+          </motion.div>
 
-              <TabsContent value="details">
-                <motion.div
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 md:p-12"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <ImageWithFallback
-                    src={kloudnxFront}
-                    alt="Kloud'nX - Détails techniques"
-                    className="w-full h-auto max-w-2xl mx-auto drop-shadow-lg"
-                  />
-                  <p className="text-center text-gray-600 mt-6">
-                    Interface KNX avec indicateurs LED - Connecteurs Ethernet et alimentation 9-30V DC
-                  </p>
-                </motion.div>
-              </TabsContent>
-
-              <TabsContent value="software">
-                <motion.div
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 md:p-12"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  <ImageWithFallback
-                    src={kloudnxSoftware}
-                    alt="Kloud'nX - Interface logicielle"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                  <p className="text-center text-gray-600 mt-6">
-                    Interface cloud complète pour monitoring, configuration et gestion à distance de votre installation KNX
-                  </p>
-                </motion.div>
-              </TabsContent>
-            </Tabs>
-          </div>
+          <CertificationBadges />
         </div>
       </section>
 
       {/* Why Kloud'nX */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="why-kloudnx" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -287,7 +332,7 @@ export function KloudnxPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <div className="text-gray-600 space-y-6">
+            <div className="text-gray-600 space-y-6 bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg">
               <p>
                 L'accès à distance à vos installations est souvent fragile à cause de plusieurs éléments : adresse IP
                 dynamique, changement de box internet ou d'opérateur, sécurisation de votre accès ou encore le
@@ -335,7 +380,7 @@ export function KloudnxPage() {
                 installations KNX :
               </p>
 
-              <div>
+              <Card className="p-8 bg-gradient-to-br from-gray-50 to-white">
                 <h3 className="text-2xl mb-4 text-gray-900">Une intégration sans limite</h3>
                 <p>
                   Afin d'allier les avantages de KNX et du monde IoT, nous avons intégré un module de programmation{' '}
@@ -350,9 +395,9 @@ export function KloudnxPage() {
                   qui vous permet de développer des flows, par vous mêmes ou via nos services. Ainsi, vous pourrez
                   ajouter tout type de développements spécifiques ou d'intégration de parties tierces qui ont une API.
                 </p>
-              </div>
+              </Card>
 
-              <div>
+              <Card className="p-8 bg-gradient-to-br from-gray-50 to-white">
                 <h3 className="text-2xl mb-4 text-gray-900">Monitoring & Notifications</h3>
                 <p>
                   À travers votre interface cloud, vous pourrez importer votre fichier de configuration ETS, choisir les
@@ -364,7 +409,7 @@ export function KloudnxPage() {
                   Vous pouvez aussi créer un service de notification (push ou email) sur la valeur d'un Datagramme ou si
                   le bus se met en défaut.
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -391,11 +436,13 @@ export function KloudnxPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <ImageWithFallback
-              src="https://can-nx.com/wp-content/uploads/2021/11/Schema-KloudnX-1024x376.png"
-              alt="Schema pour Kloud'nX"
-              className="w-full h-auto"
-            />
+            <div className="bg-white rounded-3xl p-8 shadow-xl">
+              <ImageWithFallback
+                src="https://can-nx.com/wp-content/uploads/2021/11/Schema-KloudnX-1024x376.png"
+                alt="Schema pour Kloud'nX"
+                className="w-full h-auto"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -438,7 +485,7 @@ export function KloudnxPage() {
                         Récupérer des informations / commandes qui nécessite une authentification sécurisée sur Crestron
                       </span>
                     </li>
-                  </ul>
+  </ul>
                 </AccordionContent>
               </AccordionItem>
 
@@ -462,8 +509,8 @@ export function KloudnxPage() {
         </div>
       </section>
 
-      {/* Technical Specifications */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* Technical Specifications - Modernized */}
+      <section id="specs" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -474,23 +521,25 @@ export function KloudnxPage() {
             <h2 className="text-4xl sm:text-5xl mb-6">Caractéristiques techniques</h2>
           </motion.div>
 
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="p-8">
-              <ul className="space-y-3">
-                {technicalSpecs.map((spec, index) => (
-                  <li key={index} className="flex items-center gap-3 text-gray-700">
-                    <div className="w-2 h-2 rounded-full bg-[#0CB14B]" />
-                    <span>{spec}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {technicalSpecs.map((spec, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#0CB14B]/10 to-[#cd2653]/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <spec.icon className="w-6 h-6 text-[#0CB14B]" />
+                  </div>
+                  <h4 className="text-sm text-gray-600 mb-2">{spec.label}</h4>
+                  <p className="font-medium text-gray-900">{spec.value}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -515,6 +564,7 @@ export function KloudnxPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
+                whileHover={{ scale: 1.1 }}
               >
                 <ImageWithFallback
                   src={partner.logo}
@@ -528,7 +578,7 @@ export function KloudnxPage() {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -553,7 +603,7 @@ export function KloudnxPage() {
             </Button>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -607,15 +657,120 @@ export function KloudnxPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* Volume Pricing */}
+          <VolumePricing />
+        </div>
+      </section>
+
+      {/* Product Configurator */}
+      <section id="configurator" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Trouvez la configuration idéale</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Répondez à quelques questions pour obtenir une recommandation personnalisée
+            </p>
+          </motion.div>
+
+          <ProductConfigurator />
+        </div>
+      </section>
+
+      {/* Compatibility Checker */}
+      <section id="compatibility" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Vérifiez la compatibilité</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Assurez-vous que Kloud'nX fonctionne avec votre équipement actuel
+            </p>
+          </motion.div>
+
+          <CompatibilityChecker />
+        </div>
+      </section>
+
+      {/* Customer Testimonials */}
+      <section id="testimonials" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Ce que disent nos clients</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Des professionnels satisfaits partagent leur expérience
+            </p>
+          </motion.div>
+
+          <CustomerTestimonials />
+        </div>
+      </section>
+
+      {/* Technical Documentation */}
+      <section id="documentation" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Documentation technique</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Téléchargez manuels, guides et fichiers techniques
+            </p>
+          </motion.div>
+
+          <TechnicalDocumentation />
+        </div>
+      </section>
+
+      {/* Distributor Locator */}
+      <section id="distributors" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl mb-4">Où acheter</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Trouvez un distributeur agréé Can-nX près de chez vous
+            </p>
+          </motion.div>
+
+          <DistributorLocator />
         </div>
       </section>
 
       {/* FAQ Section */}
-      <FAQ items={kloudnxFAQItems} />
+      <section id="faq">
+        <FAQ items={kloudnxFAQItems} />
+      </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -628,6 +783,7 @@ export function KloudnxPage() {
                 className="w-full h-auto drop-shadow-2xl"
               />
             </div>
+
             <h2 className="text-4xl mb-8">Prêt à passer au KNX augmenté ?</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -696,7 +852,7 @@ export function KloudnxPage() {
                   asChild
                 >
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

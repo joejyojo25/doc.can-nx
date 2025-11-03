@@ -4,24 +4,24 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import logo from 'figma:asset/348a1b6c3d5d7ac002eb03f6562c9a4b5d60b371.png';
 
 const integrations = [
+  { name: '2N', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
+  { name: 'Airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
+  { name: 'Crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
+  { name: 'DoorBird', icon: Camera, color: 'from-red-500 to-red-600', description: 'Interphones IP', link: '#integration-doorbird' },
+  { name: 'EvlinkPro', icon: Zap, color: 'from-indigo-500 to-indigo-600', description: 'Stations de charge', link: '#integration-evlinkpro' },
+  { name: 'Gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
+  { name: 'Hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
+  { name: 'HomeKit', icon: Home, color: 'from-gray-600 to-gray-700', description: 'Écosystème Apple', link: '#integration-homekit' },
+  { name: 'Klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
   { name: 'KNX', icon: Network, color: 'from-[#0CB14B] to-[#0a9d3f]', description: 'Standard bus domotique', link: '#integration-knx' },
+  { name: 'Lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
+  { name: 'Modbus', icon: Server, color: 'from-yellow-600 to-yellow-700', description: 'Protocole industriel', link: '#integration-modbus' },
+  { name: 'Nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
+  { name: 'PoolCop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
+  { name: 'Pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
   { name: 'Shelly', icon: Zap, color: 'from-blue-500 to-blue-600', description: 'Modules IoT WiFi', link: '#integration-shelly' },
   { name: 'Sonos', icon: Speaker, color: 'from-gray-800 to-gray-900', description: 'Audio multi-room', link: '#integration-sonos' },
-  { name: 'Nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
-  { name: 'DoorBird', icon: Camera, color: 'from-red-500 to-red-600', description: 'Interphones IP', link: '#integration-doorbird' },
-  { name: 'Airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
-  { name: 'Lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
   { name: 'TerraAC', icon: Car, color: 'from-teal-500 to-teal-600', description: 'Charge véhicules', link: '#integration-terraac' },
-  { name: 'EvlinkPro', icon: Zap, color: 'from-indigo-500 to-indigo-600', description: 'Stations de charge', link: '#integration-evlinkpro' },
-  { name: 'Hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
-  { name: '2N', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
-  { name: 'PoolCop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
-  { name: 'Klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
-  { name: 'Crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
-  { name: 'HomeKit', icon: Home, color: 'from-gray-600 to-gray-700', description: 'Écosystème Apple', link: '#integration-homekit' },
-  { name: 'Modbus', icon: Server, color: 'from-yellow-600 to-yellow-700', description: 'Protocole industriel', link: '#integration-modbus' },
-  { name: 'Pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
-  { name: 'Gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
 ];
 
 export function IntegrationsShowcase() {
@@ -135,18 +135,12 @@ export function IntegrationsShowcase() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <a
-            href="#integrations"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all"
-          >
-            Découvrir les intégrations
-          </a>
-          <a
             href="https://can-nx.shop"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-[#0CB14B] hover:text-[#0CB14B] hover:scale-105 transition-all"
           >
-            Boutique en ligne
+            Acheter une licence d'intégration
           </a>
         </motion.div>
       </div>
