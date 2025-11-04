@@ -198,12 +198,12 @@ export function CrestronPage() {
               <div className="flex flex-wrap gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-[#0CB14B] to-[#0a8f3d] hover:shadow-lg"
+                  className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
                   onClick={() => window.location.hash = 'kloudnx'}
                 >
                   Découvrir Kloud'nX
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="text-gray-900 border-gray-300 hover:bg-gray-50">
                   Documentation Crestron
                 </Button>
               </div>
@@ -484,8 +484,7 @@ export function CrestronPage() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="text-white border-white hover:bg-white/10"
+                className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
                 onClick={() => window.location.hash = 'contact'}
               >
                 Contacter un expert

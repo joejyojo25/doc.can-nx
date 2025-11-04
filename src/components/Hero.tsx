@@ -107,8 +107,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               {[
-                'KNX Certifié',
-                'Made in France',
+                'Fabriqué en France 🇫🇷',
                 '1000+ Installations',
               ].map((feature, index) => (
                 <motion.div
@@ -136,20 +135,20 @@ export function Hero() {
               {[
                 {
                   icon: '🏢',
-                  title: 'GTB Complète',
-                  desc: 'Gestion technique du bâtiment',
+                  title: 'BOSS KNX',
+                  desc: 'Building operating smart system',
                   delay: 0.4,
                 },
                 {
                   icon: '🔌',
                   title: 'Intégration',
-                  desc: '13+ marques supportées',
+                  desc: '50+ marques supportées',
                   delay: 0.5,
                 },
                 {
                   icon: '📱',
                   title: 'Cloud Ready',
-                  desc: 'Supervision à distance',
+                  desc: 'Programmation et Monitoring à distance',
                   delay: 0.6,
                 },
                 {

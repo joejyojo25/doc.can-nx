@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Zap, Wifi, Radio, Lock, Camera, Wind, Plug, Car, Video, Network, Droplets, Waves, Home, Speaker, Bell, Server, MessageSquare } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Button } from './ui/button';
 import logo from 'figma:asset/919ef30138c882ec49118640f7395b4d213df19e.png';
 
 const integrations = [
@@ -134,14 +135,19 @@ export function IntegrationsShowcase() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <a
-            href="https://can-nx.shop"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-[#0CB14B] hover:text-[#0CB14B] hover:scale-105 transition-all"
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
+            asChild
           >
-            Acheter une licence d'intégration
-          </a>
+            <a
+              href="https://can-nx.shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acheter une licence d'intégration
+            </a>
+          </Button>
         </motion.div>
       </div>
     </section>

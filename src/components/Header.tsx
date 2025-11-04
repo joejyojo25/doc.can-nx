@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, ChevronDown, ShoppingCart, Cloud, Cpu, Zap, Droplet, BarChart3, MessageSquare, Cog, Home, Plug, Wifi, DoorOpen, Shield, Camera, Music, Phone, Server, Lock, Waves, Radio, Headphones, FileText, Video, HelpCircle, Network, Bell, Building2 } from 'lucide-react';
+import { Menu, X, ChevronDown, ShoppingCart, Search, Cloud, Cpu, Zap, Droplet, BarChart3, MessageSquare, Cog, Home, Plug, Wifi, DoorOpen, Shield, Camera, Music, Phone, Server, Lock, Waves, Radio, Headphones, FileText, Video, HelpCircle, Network, Bell, Building2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SearchDialog } from './SearchDialog';
 import kloudnxProductImage from 'figma:asset/f4e7e08a8f77640a41e6d024869598c4050d7f0d.png';
 import poolnxProductImage from 'figma:asset/6b039210627c783e16b5de6f2c223b0fa9c5ae6c.png';
 import emergynxProductImage from 'figma:asset/dca0fdeb28cc7c96bb88e49f32acb378db2249c0.png';
@@ -163,6 +164,7 @@ export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [integrationsMenuOpen, setIntegrationsMenuOpen] = useState(false);
   const [productsMenuOpen, setProductsMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -197,6 +199,19 @@ export function Header() {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [integrationsMenuOpen, productsMenuOpen]);
+
+  // Global search keyboard shortcut (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -425,6 +440,19 @@ export function Header() {
 
           {/* Right side actions */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Search Button */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors group"
+              title="Rechercher (Cmd+K)"
+            >
+              <Search className="w-4 h-4" />
+              <span className="hidden xl:inline">Rechercher</span>
+              <kbd className="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 text-xs bg-white border border-gray-300 rounded">
+                <span>⌘</span>K
+              </kbd>
+            </button>
+
             <Button
               variant="outline"
               size="sm"
@@ -592,6 +620,22 @@ export function Header() {
                 Contact
               </a>
 
+              {/* Mobile Search Button */}
+              <div className="px-4 py-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2 w-full"
+                  onClick={() => {
+                    setSearchOpen(true);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  <Search className="w-4 h-4" />
+                  Rechercher
+                </Button>
+              </div>
+
               {/* Mobile Shop Button */}
               <div className="px-4 py-2">
                 <Button
@@ -714,7 +758,7 @@ export function Header() {
                         closeIntegrationsMenu();
                         window.location.hash = 'integrations';
                       }}
-                      className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#0CB14B]"
+                      className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
                     >
                       Voir toutes les intégrations
                     </Button>
@@ -857,7 +901,7 @@ export function Header() {
                             closeProductsMenu();
                             window.location.hash = 'kloudnx';
                           }}
-                          className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#0CB14B]"
+                          className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
                         >
                           Découvrir Kloud'nX
                         </Button>
@@ -898,7 +942,7 @@ export function Header() {
                         closeProductsMenu();
                         window.location.hash = 'products';
                       }}
-                      className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#0CB14B]"
+                      className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
                     >
                       Voir tous les produits
                     </Button>
@@ -918,6 +962,9 @@ export function Header() {
           </>
         )}
       </AnimatePresence>
+
+      {/* Search Dialog */}
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </header>
   );
 }

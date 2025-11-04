@@ -112,7 +112,7 @@ export function ImprovementsDemo() {
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 Voir les améliorations
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
                 Documentation complète
               </Button>
             </div>
@@ -343,7 +343,7 @@ export function ImprovementsDemo() {
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 Voir la documentation →
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
                 Commencer l'implémentation
               </Button>
             </div>

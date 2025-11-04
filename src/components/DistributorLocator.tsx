@@ -132,7 +132,7 @@ export function DistributorLocator() {
             <strong>Vous ne trouvez pas de distributeur dans votre région ?</strong>
           </p>
           <Button
-            className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#087d33] text-white"
+            className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
             asChild
           >
             <a href="mailto:contact@can-nx.com">

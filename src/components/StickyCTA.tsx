@@ -49,11 +49,11 @@ export function StickyCTA({ productName, shopUrl, docsUrl }: StickyProps) {
             )}
             <Button
               size="sm"
-              className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#087d33] text-white"
+              className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30 gap-2"
               asChild
             >
               <a href={shopUrl} target="_blank" rel="noopener noreferrer">
-                <ShoppingCart className="w-4 h-4 mr-2" />
+                <ShoppingCart className="w-4 h-4" />
                 Acheter
               </a>
             </Button>

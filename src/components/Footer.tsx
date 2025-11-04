@@ -1,6 +1,7 @@
 import { Linkedin, Youtube } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import { Logo } from './Logo';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,7 @@ export function Footer() {
       <div className="border-b border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl mb-4">Voulez vous recevoir la newsletter Can-nX ?</h3>
+            <h3 className="text-2xl mb-4">Voulez vous recevoir la newsletter Can'nX ?</h3>
             <form className="flex gap-4 max-w-md mx-auto">
               <Input
                 type="email"
@@ -34,8 +35,8 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Company Info */}
           <div>
-            <div className="w-32 h-12 bg-gradient-to-r from-[#0CB14B] to-[#cd2653] rounded-lg flex items-center justify-center mb-6">
-              <span className="text-white font-bold text-xl">Can-nX</span>
+            <div className="mb-6">
+              <Logo className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-6">
               Fabricant KNX certifié - Solutions innovantes pour l'intégration IoT et KNX dans le bâtiment intelligent.

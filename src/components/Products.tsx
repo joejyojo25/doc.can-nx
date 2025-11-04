@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Cloud, Droplets, Radio, Volume2, Boxes, Zap } from 'lucide-react';
+import { Cloud, Droplets, Radio, Volume2, Boxes, Zap, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Button } from './ui/button';
 import kloudnxProductImage from 'figma:asset/b1a83fc3c8a20ae4448c96116d5ab85ce70f55e4.png';
 import poolnxProductImage from 'figma:asset/6b039210627c783e16b5de6f2c223b0fa9c5ae6c.png';
 import speaknxProductImage from 'figma:asset/5745f25880afe1bc24c217e68bbc5b290ffbbe5f.png';
@@ -144,6 +145,23 @@ export function Products() {
             de vos installations avec notre gamme de produits ! Vous avez accès à des solutions fiables, interopérables, 
             flexibles et sécurisées.
           </p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-8"
+          >
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white gap-2 shadow-lg shadow-[#0CB14B]/30"
+              onClick={() => window.open('https://can-nx.shop', '_blank')}
+            >
+              Voir les prix
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

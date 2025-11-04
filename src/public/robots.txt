@@ -1,0 +1,16 @@
+# robots.txt pour Can-nX
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://can-nx.com/sitemap.xml
+
+# Crawl-delay pour être gentil avec les serveurs
+Crawl-delay: 1
+
+# Bloquer les ressources inutiles
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=

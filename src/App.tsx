@@ -11,6 +11,9 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FAQ } from './components/FAQ';
+import { SEOHead } from './components/SEOHead';
+import { getSEOConfig } from './config/seoConfig';
+import { logSEODiagnostic } from './utils/seoDiagnostic';
 import { KloudnxPage } from './pages/KloudnxPage';
 import { KloudnxSubscriptionPage } from './pages/KloudnxSubscriptionPage';
 import { ChartnxPage } from './pages/ChartnxPage';
@@ -86,9 +89,21 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // SEO Diagnostic in development mode
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      // Run diagnostic after DOM is fully loaded
+      const timer = setTimeout(() => {
+        logSEODiagnostic();
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage]);
+
   if (currentPage === 'kloudnx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('kloudnx')} />
         <Header />
         <main>
           <KloudnxPage />
@@ -101,6 +116,7 @@ export default function App() {
   if (currentPage === 'kloudnx-subscription') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('kloudnx')} />
         <Header />
         <main>
           <KloudnxSubscriptionPage />
@@ -113,6 +129,7 @@ export default function App() {
   if (currentPage === 'chartnx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('chartnx')} />
         <Header />
         <main>
           <ChartnxPage />
@@ -125,6 +142,7 @@ export default function App() {
   if (currentPage === 'bossnx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('bossnx')} />
         <Header />
         <main>
           <BossnxPage />
@@ -137,6 +155,7 @@ export default function App() {
   if (currentPage === 'poolnx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('poolnx')} />
         <Header />
         <main>
           <PoolnxPage />
@@ -149,6 +168,7 @@ export default function App() {
   if (currentPage === 'emergynx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('emergynx')} />
         <Header />
         <main>
           <EmergynxPage />
@@ -161,6 +181,7 @@ export default function App() {
   if (currentPage === 'infinix') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('infinix')} />
         <Header />
         <main>
           <InfiniKnxPage />
@@ -173,6 +194,7 @@ export default function App() {
   if (currentPage === 'infinix-configurator') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('infinix')} />
         <Header />
         <main>
           <InfiniKnxConfiguratorPage />
@@ -185,6 +207,7 @@ export default function App() {
   if (currentPage === 'modnx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('modnx')} />
         <Header />
         <main>
           <ModnxPage />
@@ -197,6 +220,7 @@ export default function App() {
   if (currentPage === 'speaknx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('speaknx')} />
         <Header />
         <main>
           <SpeaknxPage />
@@ -209,6 +233,7 @@ export default function App() {
   if (currentPage === 'improvements') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('home')} />
         <Header />
         <main>
           <ImprovementsDemo />
@@ -222,6 +247,7 @@ export default function App() {
   if (currentPage === 'integration-2n') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-2n')} />
         <Header />
         <main>
           <TwoNPage />
@@ -234,6 +260,7 @@ export default function App() {
   if (currentPage === 'integration-doorbird') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-doorbird')} />
         <Header />
         <main>
           <DoorbirdPage />
@@ -246,6 +273,7 @@ export default function App() {
   if (currentPage === 'integration-poolcop') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-poolcop')} />
         <Header />
         <main>
           <PoolcopPage />
@@ -258,6 +286,7 @@ export default function App() {
   if (currentPage === 'integration-modbus') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-modbus')} />
         <Header />
         <main>
           <ModbusPage />
@@ -270,6 +299,7 @@ export default function App() {
   if (currentPage === 'integration-sonos') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-sonos')} />
         <Header />
         <main>
           <SonosPage />
@@ -282,6 +312,7 @@ export default function App() {
   if (currentPage === 'integration-klereo') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-klereo')} />
         <Header />
         <main>
           <KlereoPage />
@@ -294,6 +325,7 @@ export default function App() {
   if (currentPage === 'integration-crestron') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-crestron')} />
         <Header />
         <main>
           <CrestronPage />
@@ -306,6 +338,7 @@ export default function App() {
   if (currentPage === 'integration-hikvision') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-hikvision')} />
         <Header />
         <main>
           <HikvisionPage />
@@ -318,6 +351,7 @@ export default function App() {
   if (currentPage === 'integration-nuki') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-nuki')} />
         <Header />
         <main>
           <NukiPage />
@@ -330,6 +364,7 @@ export default function App() {
   if (currentPage === 'integration-shelly') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-shelly')} />
         <Header />
         <main>
           <ShellyPage />
@@ -342,6 +377,7 @@ export default function App() {
   if (currentPage === 'integration-gude') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-gude')} />
         <Header />
         <main>
           <GudePage />
@@ -354,6 +390,7 @@ export default function App() {
   if (currentPage === 'integration-airzone') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-airzone')} />
         <Header />
         <main>
           <AirzonePage />
@@ -366,6 +403,7 @@ export default function App() {
   if (currentPage === 'integration-lektrico') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-lektrico')} />
         <Header />
         <main>
           <LektricoPage />
@@ -379,6 +417,7 @@ export default function App() {
   if (currentPage === 'integration-aidoo') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-airzone')} />
         <Header />
         <main>
           <AirzonePage />
@@ -391,6 +430,7 @@ export default function App() {
   if (currentPage === 'integration-terraac') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-terraac')} />
         <Header />
         <main>
           <TerraACPage />
@@ -403,6 +443,7 @@ export default function App() {
   if (currentPage === 'integration-pushover') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-pushover')} />
         <Header />
         <main>
           <PushoverPage />
@@ -415,6 +456,7 @@ export default function App() {
   if (currentPage === 'integration-homekit') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-homekit')} />
         <Header />
         <main>
           <HomeKitPage />
@@ -427,6 +469,7 @@ export default function App() {
   if (currentPage === 'integration-knx') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-knx')} />
         <Header />
         <main>
           <KNXPage />
@@ -439,6 +482,7 @@ export default function App() {
   if (currentPage === 'integration-evlinkpro') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('integration-evlinkpro')} />
         <Header />
         <main>
           <EvlinkProPage />
@@ -451,6 +495,7 @@ export default function App() {
   if (currentPage === 'blog') {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead {...getSEOConfig('blog')} />
         <Header />
         <main>
           <BlogPage />
@@ -462,6 +507,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead {...getSEOConfig('home')} />
       <Header />
       <main>
         <Hero />

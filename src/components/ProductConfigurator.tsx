@@ -172,10 +172,10 @@ export function ProductConfigurator() {
               <Button
                 onClick={handleNext}
                 disabled={!selectedOption}
-                className="bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#087d33] text-white"
+                className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30 gap-2"
               >
                 {currentStep === configuratorSteps.length - 1 ? 'Voir la recommandation' : 'Suivant'}
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </>
@@ -223,7 +223,7 @@ export function ProductConfigurator() {
                 Recommencer
               </Button>
               <Button
-                className="flex-1 bg-gradient-to-r from-[#0CB14B] to-[#0a9940] hover:from-[#0a9940] hover:to-[#087d33] text-white"
+                className="flex-1 bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30"
                 asChild
               >
                 <a href="https://can-nx.shop" target="_blank" rel="noopener noreferrer">

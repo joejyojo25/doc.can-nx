@@ -217,7 +217,7 @@ export function BossnxPage() {
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Découvrir Boss'nX
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="text-gray-900 border-gray-300 hover:bg-gray-50">
                 <Settings className="w-5 h-5 mr-2" />
                 Documentation
               </Button>
@@ -440,7 +440,7 @@ export function BossnxPage() {
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 Demander une présentation
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
                 Voir les tarifs
               </Button>
             </div>

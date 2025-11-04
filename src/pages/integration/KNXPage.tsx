@@ -182,10 +182,10 @@ export function KNXPage() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-[#0CB14B] to-[#0a8f3d] hover:shadow-lg">
+                <Button size="lg" className="bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 hover:from-[#0CB14B]/90 hover:to-[#0CB14B] text-white shadow-lg shadow-[#0CB14B]/30">
                   Découvrir nos produits KNX
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="text-gray-900 border-gray-300 hover:bg-gray-50">
                   KNX Association
                 </Button>
               </div>
@@ -438,7 +438,7 @@ export function KNXPage() {
               <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
                 Nos produits KNX
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
                 Contacter un expert
               </Button>
             </div>

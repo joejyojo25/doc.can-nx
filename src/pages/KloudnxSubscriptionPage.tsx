@@ -482,8 +482,7 @@ export function KloudnxSubscriptionPage() {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-2 border-white bg-transparent text-white hover:bg-white/10 hover:text-white"
                 asChild
               >
                 <a href="#kloudnx">
