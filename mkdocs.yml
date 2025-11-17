@@ -38,6 +38,9 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - header.autohide
+    
+extra_css:
+  - assets/extra.css
 
   font:
     text: Roboto
