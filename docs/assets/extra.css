@@ -1,11 +1,12 @@
 /*******************************************************
- * ENHANCED UI PACK – CAN’N'X
+ * ENHANCED UI PACK – CAN’N'X (Merged with 1Home Sidebar)
  * Cleaner, premium design for MkDocs Material
  *******************************************************/
 
-/* -------------------------------
-   GLOBAL SPACING & TYPOGRAPHY
---------------------------------*/
+
+/* =====================================================
+   GLOBAL TYPOGRAPHY & LAYOUT
+===================================================== */
 .md-content {
   max-width: 980px;
 }
@@ -34,9 +35,10 @@
   font-size: 1.4rem;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    HEADER – WHITE – PREMIUM LOOK
-----------------------------------*/
+===================================================== */
 .md-header,
 .md-header__inner,
 .md-tabs {
@@ -49,9 +51,10 @@
   color: #1a1a1a !important;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    HERO SECTION
-----------------------------------*/
+===================================================== */
 .hero {
   padding: 4rem 2rem;
   text-align: center;
@@ -77,6 +80,10 @@
   margin-top: 2rem;
 }
 
+
+/* =====================================================
+   BUTTONS
+===================================================== */
 .btn {
   display: inline-block;
   padding: 0.7rem 1.6rem;
@@ -104,9 +111,10 @@
   background: #eafff2;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    RESPONSIVE CARDS
-----------------------------------*/
+===================================================== */
 .card-grid {
   display: grid;
   gap: 1.4rem;
@@ -137,9 +145,10 @@
   color: #555;
 }
 
-/* ---------------------------------
-   TAGS (NEW, BETA, PRO)
-----------------------------------*/
+
+/* =====================================================
+   TAGS (NEW / BETA / PRO)
+===================================================== */
 .tag {
   display: inline-block;
   padding: 0.15rem 0.55rem;
@@ -164,18 +173,20 @@
   color: #22a844;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    TABLES – PREMIUM LOOK
-----------------------------------*/
+===================================================== */
 .md-typeset table:not([class]) {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    BLOCKQUOTES – GREEN STRIPE
-----------------------------------*/
+===================================================== */
 .md-typeset blockquote {
   border-left: 5px solid #25c06b;
   background: #f3fff7;
@@ -183,12 +194,102 @@
   border-radius: 6px;
 }
 
-/* ---------------------------------
+
+/* =====================================================
    CODE BLOCKS
-----------------------------------*/
+===================================================== */
 .md-typeset pre {
   border-radius: 10px;
   background: #f8f9fa;
   padding: 1rem;
   box-shadow: inset 0 0 0 1px #e6e8eb;
+}
+
+
+/*******************************************************
+ * 1HOME-STYLE SIDEBAR (MERGED)
+ *******************************************************/
+
+/* ----------------------------------------
+   Sidebar width (narrow, clean)
+-----------------------------------------*/
+.md-sidebar--primary {
+  width: 235px;
+  border-right: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Sidebar background */
+.md-sidebar--primary,
+.md-nav__container {
+  background-color: #ffffff !important;
+}
+
+/* ----------------------------------------
+   Section headers (uppercase like 1Home)
+-----------------------------------------*/
+.md-nav__title {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(0,0,0,0.45);
+  padding: 1rem 1rem 0.3rem 1rem;
+}
+
+/* ----------------------------------------
+   Nav links – compact spacing
+-----------------------------------------*/
+.md-nav__link {
+  padding: 0.45rem 1rem !important;
+  font-size: 0.92rem !important;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.md-nav__link:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Active highlight */
+.md-nav__link--active {
+  font-weight: 600 !important;
+  background: rgba(37, 192, 107, 0.08) !important;
+  border-left: 3px solid #25c06b !important;
+  padding-left: calc(1rem - 3px) !important;
+  color: #000 !important;
+}
+
+/* Indented children */
+.md-nav__item .md-nav__link[data-level="2"] {
+  padding-left: 1.5rem !important;
+  font-size: 0.88rem !important;
+  opacity: 0.9;
+}
+
+/* Section separators */
+.md-nav__section {
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Compact nav list spacing */
+.md-nav__list {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+/* Remove side shadow */
+.md-sidebar--primary {
+  box-shadow: none !important;
+}
+
+/* Mobile sidebar */
+@media (max-width: 800px) {
+  .md-sidebar--primary {
+    width: 100%;
+  }
+  .md-nav__title {
+    padding-left: 1rem;
+  }
 }
