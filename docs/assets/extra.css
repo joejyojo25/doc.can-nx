@@ -1,78 +1,343 @@
 /*******************************************************
- * CAN’N’X — FIXED SIDEBAR + FIXED FOOTER NAV
+ * CAN’N’X – COMPLETE CUSTOM THEME (extra.css)
  *******************************************************/
 
 
 /* =====================================================
-   SIDEBAR — WIDER + MORE COMPACT
+   GLOBAL TYPOGRAPHY & CONTENT WIDTH
 ===================================================== */
 
-/* Wider sidebar */
-.md-sidebar--primary {
-  width: 240px !important;
-  min-width: 240px !important;
-  border-right: 1px solid rgba(0,0,0,0.06);
-  background: #ffffff !important;
+.md-content {
+  max-width: 980px;
 }
 
-/* Compact section titles */
-.md-nav__title {
-  font-size: 0.78rem !important;
-  padding: 0.6rem 1rem 0.25rem 1rem !important;
-  margin: 0 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: rgba(0,0,0,0.5);
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-/* Compact links */
-.md-nav__link {
-  padding: 0.35rem 1rem !important;
-  font-size: 0.92rem !important;
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 2.2rem;
 }
 
-/* Children links */
-.md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.4rem !important;
-  font-size: 0.85rem !important;
+.md-typeset h1 {
+  font-size: 2.3rem;
 }
 
-/* Reduce vertical spacing between sections */
-.md-nav__section {
-  margin: 0 !important;
-  padding: 0.2rem 0 !important;
+.md-typeset h2 {
+  font-size: 1.8rem;
 }
 
-/* Reduce list spacing */
-.md-nav__list {
-  padding: 0.15rem 0 !important;
-}
-
-/* Active link highlight */
-.md-nav__link--active {
-  background: rgba(37,192,107,0.10) !important;
-  border-left: 3px solid #25c06b !important;
-  padding-left: calc(1rem - 3px) !important;
-  font-weight: 600 !important;
+.md-typeset h3 {
+  font-size: 1.4rem;
 }
 
 
 /* =====================================================
-   FOOTER NAV — ONLY UNDER CONTENT (NOT UNDER SIDEBAR)
+   HEADER – WHITE, PREMIUM
 ===================================================== */
 
-/* footer container spanning only the content area */
+.md-header,
+.md-header__inner,
+.md-tabs {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.md-header-nav__title {
+  color: #1a1a1a !important;
+}
+
+
+/* =====================================================
+   HERO SECTION (HOME PAGE)
+===================================================== */
+
+.hero {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e8fbea 0%, #ffffff 60%);
+  margin-bottom: 2.4rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: auto;
+  color: #444;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  background: #25c06b;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background: #1fa85d;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #25c06b;
+  color: #25c06b !important;
+}
+
+.btn-secondary:hover {
+  background: #eafff2;
+}
+
+
+/* =====================================================
+   CARD GRID – FIXED CUTTING
+===================================================== */
+
+.card-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 2rem 0;
+}
+
+.card {
+  padding: 1.6rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: #555555;
+}
+
+
+/* =====================================================
+   TAGS (NEW / BETA / PRO)
+===================================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+.tag-new {
+  background: #eaf7ff;
+  color: #0077cc;
+}
+
+.tag-beta {
+  background: #fff6e1;
+  color: #d79a00;
+}
+
+.tag-pro {
+  background: #e9ffe9;
+  color: #22a844;
+}
+
+
+/* =====================================================
+   TABLES
+===================================================== */
+
+.md-typeset table:not([class]) {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BLOCKQUOTES
+===================================================== */
+
+.md-typeset blockquote {
+  border-left: 5px solid #25c06b;
+  background: #f3fff7;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+}
+
+
+/* =====================================================
+   CODE BLOCKS
+===================================================== */
+
+.md-typeset pre {
+  border-radius: 10px;
+  background: #f8f9fa;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px #e6e8eb;
+}
+
+
+/*******************************************************
+ * SIDEBAR – WIDER, COMPACT SECTIONS
+ *******************************************************/
+
+/* Wider sidebar so long titles fit better */
+.md-sidebar--primary {
+  width: 260px !important;
+  min-width: 260px !important;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  background-color: #ffffff !important;
+}
+
+/* Section header (e.g., “Dépannage”) */
+.md-nav__title {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(0,0,0,0.45);
+  padding: 0.5rem 1rem 0.25rem 1rem !important;
+}
+
+/* Compact nav links */
+.md-nav__link {
+  padding: 0.35rem 1rem !important;
+  font-size: 0.90rem !important;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.md-nav__link:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Active item */
+.md-nav__link--active {
+  font-weight: 600 !important;
+  background: rgba(37, 192, 107, 0.10) !important;
+  border-left: 3px solid #25c06b !important;
+  padding-left: calc(1rem - 3px) !important;
+  color: #000000 !important;
+}
+
+/* Children entries (level 2) */
+.md-nav__item .md-nav__link[data-level="2"] {
+  padding-left: 1.4rem !important;
+  font-size: 0.84rem !important;
+  opacity: 0.95;
+}
+
+/* Reduce vertical gaps between sections */
+.md-nav__section {
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Compact list */
+.md-nav__list {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
+
+/*******************************************************
+ * FOOTER NAV – ONLY UNDER CONTENT, NOT SIDEBAR
+ *******************************************************/
+
+/* Remove global dark strip – we will draw it only under content */
+.md-footer {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-top: none !important;
+}
+
+/* Dark bar under the content only */
 .md-footer-nav {
-  max-width: 980px;                 /* same as .md-content width */
-  margin: 0 auto;                   /* center it */
-  padding: 0.5rem 0.5rem !important;
+  background: #212121;
+  margin-left: 260px;                         /* same as sidebar width */
+  width: calc(100% - 260px);
+  padding: 0.3rem 1rem !important;
+  box-sizing: border-box;
 }
 
-/* Ensure footer does NOT sit under sidebar */
-.md-footer-nav__inner {
-  margin-left: 0 !important;
-}
-
-/* Make footer buttons small and neat */
+/* Small next/previous buttons */
 .md-footer-nav__link {
-  padding: 0.35rem
+  padding: 0.35rem 0.7rem !important;
+  font-size: 0.78rem !important;
+}
+
+.md-footer-nav__title {
+  font-size: 0.70rem !important;
+  opacity: 0.9;
+}
+
+/* Smaller icons */
+.md-icon svg {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+}
+
+/* Meta (copyright) stays full width but lighter */
+.md-footer-meta {
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.75rem !important;
+  padding: 0.6rem 1rem !important;
+}
+
+
+/*******************************************************
+ * MOBILE ADAPTATION
+ *******************************************************/
+
+@media (max-width: 960px) {
+  /* Sidebar becomes full width */
+  .md-sidebar--primary {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* Footer nav again full width on mobile */
+  .md-footer-nav {
+    margin-left: 0;
+    width: 100%;
+  }
+}
