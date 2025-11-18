@@ -1,15 +1,89 @@
+/*******************************************************
+ * Can'nX – Custom theme for MkDocs Material (FINAL WORKING VERSION)
+ *******************************************************/
+
+/* --- GLOBAL LAYOUT FIXES --- */
+
+/* 1. Ensure the content area is constrained */
+.md-content {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* --- TYPOGRAPHY (Maximum Specificity to Override Defaults) --- */
+
+/* Base typography: Reduced and forced */
+.md-typeset {
+  font-size: 0.90rem !important; 
+  line-height: 1.6 !important; 
+  color: #1a1a1a !important;
+}
+
+/* =====================================================
+    TABS (TOP NAV) – COMPACT (FORCED)
+===================================================== */
+
+.md-tabs__list {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+}
+
+/* Tighter tabs: Reduced padding and font size */
+.md-tabs__link {
+  padding: 0.25rem 0.5rem !important; 
+  font-size: 0.9rem !important;      
+  font-weight: 500 !important;
+  color: #444444 !important;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  background: rgba(37, 192, 107, 0.14) !important;
+  border-bottom: 2px solid #25c06b !important;
+  color: #000000 !important;
+}
+
+
+/* =====================================================
+ * SIDEBAR – COMPACT (FORCED)
+ *===================================================== */
+
+/* Sidebar width */
+.md-sidebar--primary {
+    width: 260px !important;
+    min-width: 260px !important;
+}
+
+/* titles inside sidebar sections */
+.md-sidebar--primary .md-nav__title {
+  font-size: 0.75rem !important; 
+  padding: 0.6rem 1rem 0.3rem !important;
+}
+
+/* links - Reduced font size and padding */
+.md-sidebar--primary .md-nav__link {
+  padding: 0.35rem 1rem !important; 
+  font-size: 0.88rem !important; 
+}
+
+/* second level links - Reduced font size */
+.md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
+  padding-left: 1.4rem !important;
+  font-size: 0.82rem !important; 
+}
+
 /* =====================================================
  * FOOTER – PREVIOUS / NEXT BUTTONS (GREEN & CONSTRAINED)
  *===================================================== */
 
-/* 1. Ensure the main footer container background is overridden */
+/* 1. Ensure the main footer container background is overridden to light/transparent */
 .md-footer {
-  /* Set a light/transparent background for the overall footer area */
   background-color: #ffffff !important; 
   border-top: none !important;
 }
 
-/* 2. Target the *navigation bar* (GREEN THEME & COMPACT) */
+/* 2. Target the *navigation bar* for the green theme and size fix */
 .md-footer__inner {
   /* FIX: GREEN BACKGROUND */
   background: #25c06b !important; /* Your brand green */
@@ -23,18 +97,15 @@
   
   /* CONSTRAIN TO CONTENT WIDTH */
   max-width: 980px !important;
-  margin: 0 auto !important; /* Center it under the content */
+  margin: 0 auto !important;
 }
 
-/* 3. The link container itself might have a conflicting background */
-.md-footer-nav {
-    background-color: transparent !important;
-}
-.md-footer-nav__inner {
+/* Fix for possible conflicting background on surrounding elements */
+.md-footer-nav, .md-footer-nav__inner {
     background-color: transparent !important;
 }
 
-/* Footer links and buttons */
+/* Footer links and icons */
 .md-footer__link {
   padding: 0.15rem 0.3rem !important; 
   color: #ffffff !important; 
@@ -42,11 +113,34 @@
 }
 
 .md-footer__button .md-icon svg {
-  fill: #ffffff !important; /* White icons */
+  fill: #ffffff !important; 
 }
 
-/* 4. Copyright bar (Kept dark and full width) */
+/* 3. Copyright bar (Dark, full width, and detached) */
 .md-footer-meta {
   background: #111111 !important;
-  /* ... rest of the meta styles ... */
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  padding: 0.6rem 1rem !important;
+  width: 100% !important; 
+  margin-top: 1.5rem !important; 
+}
+
+/* =====================================================
+ * RESPONSIVE 
+ *===================================================== */
+
+@media (max-width: 960px) {
+  /* Mobile: Allow full width and remove corner rounding */
+  .md-footer {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0.5rem !important; 
+  }
+
+  .md-footer__inner {
+    margin: 0 !important;
+    max-width: none !important;
+    border-radius: 0 !important; 
+  }
 }
