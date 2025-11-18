@@ -1,11 +1,12 @@
 site_name: "Can'nX Documentation"
-site_url: https://joeyjojo25.github.io/doc.can-nx/
+site_url: https://joeyjojo25.github.io/docs.can-nx/
 site_description: "Documentation complète pour l’écosystème KNX, IoT & IP Can’nX"
 site_author: "Can'nX"
 
 theme:
   name: material
   language: fr
+  custom_dir: docs/overrides # <--- NEW: Tells MkDocs where to find main.css
 
   # ------------------------------
   # Theme Features
@@ -58,10 +59,10 @@ theme:
   favicon: assets/favicon.png
 
 # ------------------------------
-# Load Custom CSS (Path matches your repository structure)
+# Load Custom CSS (REMOVED: This block is replaced by 'custom_dir')
 # ------------------------------
-extra_css:
-  - docs/assets/extra.css
+# extra_css:
+#   - docs/assets/extra.css
 
 # ------------------------------
 # Social footer links
