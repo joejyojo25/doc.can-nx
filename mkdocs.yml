@@ -5,11 +5,8 @@ site_author: "Can'nX"
 
 theme:
   name: material
-  language: fr
+  language: fr  # unified and kept clean
 
-  # ------------------------------
-  # 1Home-like theme features
-  # ------------------------------
   features:
     - navigation.instant
     - navigation.sections
@@ -28,9 +25,6 @@ theme:
     - header.autohide
     - navigation.footer
 
-  # ------------------------------
-  # Colors (1Home-like, clean white)
-  # ------------------------------
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -47,9 +41,6 @@ theme:
         icon: material/lightbulb
         name: Mode clair
 
-  # ------------------------------
-  # Typography & branding
-  # ------------------------------
   font:
     text: Roboto
     code: Roboto Mono
@@ -57,15 +48,9 @@ theme:
   logo: assets/logo.png
   favicon: assets/favicon.png
 
-# ------------------------------
-# Load enhanced UI (CSS)
-# ------------------------------
 extra_css:
   - assets/extra.css
 
-# ------------------------------
-# Social footer
-# ------------------------------
 extra:
   social:
     - icon: fontawesome/brands/linkedin
@@ -75,9 +60,6 @@ extra:
     - icon: fontawesome/solid/cart-shopping
       link: https://can-nx.shop
 
-# ------------------------------
-# Plugins (1Home-like)
-# ------------------------------
 plugins:
   - search:
       lang:
@@ -87,9 +69,6 @@ plugins:
   - tags
   - social
 
-# ------------------------------
-# Markdown extensions
-# ------------------------------
 markdown_extensions:
   - admonition
   - attr_list
@@ -105,9 +84,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
-# ------------------------------
-# NAVIGATION (1Home-like grouping)
-# ------------------------------
 nav:
 
   - Accueil: index.md
@@ -121,6 +97,7 @@ nav:
 
   - Produits:
       - Vue d'ensemble: products/overview.md
+
       - Kloud'nX:
           - Présentation: products/kloudnx/overview.md
           - Installation: products/kloudnx/installation.md
@@ -172,47 +149,113 @@ nav:
           - Installation: products/modnx/installation.md
           - Configuration: products/modnx/configuration.md
 
+
+  # ------------------------------------------------------
+  # UPDATED — CLEAN UNIFIED INTEGRATION STRUCTURE
+  # ------------------------------------------------------
   - Intégrations:
       - Vue d'ensemble: integrations/overview.md
-      - Protocoles:
-          - KNX: integrations/knx.md
-          - Modbus: integrations/modbus.md
-          - MQTT: integrations/mqtt.md
-          - HTTP API: integrations/http-api.md
+
+      - KNX: integrations/knx/index.md
+      - Modbus: integrations/modbus/index.md
+      - MQTT: integrations/mqtt/index.md
+      - HTTP API: integrations/http-api/index.md
 
       - Contrôle d'accès:
-          - 2N: integrations/access-control/2n.md
-          - Doorbird: integrations/access-control/doorbird.md
-          - Nuki: integrations/access-control/nuki.md
-          - Gude: integrations/access-control/gude.md
+          - 2N:
+              - Présentation: integrations/access-control/2n/index.md
+              - Installation: integrations/access-control/2n/installation.md
+              - Configuration: integrations/access-control/2n/configuration.md
+              - Actions: integrations/access-control/2n/actions.md
+              - Déclencheurs: integrations/access-control/2n/triggers.md
+
+          - Doorbird:
+              - Présentation: integrations/access-control/doorbird/index.md
+              - Installation: integrations/access-control/doorbird/installation.md
+              - Configuration: integrations/access-control/doorbird/configuration.md
+
+          - Nuki:
+              - Présentation: integrations/access-control/nuki/index.md
+              - Installation: integrations/access-control/nuki/installation.md
+              - Configuration: integrations/access-control/nuki/configuration.md
+
+          - Gude:
+              - Présentation: integrations/access-control/gude/index.md
+              - Installation: integrations/access-control/gude/installation.md
+              - Configuration: integrations/access-control/gude/configuration.md
 
       - Vidéosurveillance:
-          - Hikvision: integrations/cameras/hikvision.md
+          - Hikvision:
+              - Présentation: integrations/cameras/hikvision/index.md
+              - Installation: integrations/cameras/hikvision/installation.md
+              - Configuration: integrations/cameras/hikvision/configuration.md
 
       - Audio:
-          - Sonos: integrations/audio/sonos.md
-          - Klereo: integrations/audio/klereo.md
+          - Sonos:
+              - Présentation: integrations/audio/sonos/index.md
+              - Installation: integrations/audio/sonos/installation.md
+              - Configuration: integrations/audio/sonos/configuration.md
+
+          - Klereo:
+              - Présentation: integrations/audio/klereo/index.md
+              - Installation: integrations/audio/klereo/installation.md
+              - Configuration: integrations/audio/klereo/configuration.md
 
       - Piscine:
-          - Poolcop: integrations/pool/poolcop.md
+          - Poolcop:
+              - Présentation: integrations/pool/poolcop/index.md
+              - Installation: integrations/pool/poolcop/installation.md
+              - Configuration: integrations/pool/poolcop/configuration.md
 
       - Climatisation:
-          - Airzone: integrations/hvac/airzone.md
+          - Airzone:
+              - Présentation: integrations/hvac/airzone/index.md
+              - Installation: integrations/hvac/airzone/installation.md
+              - Configuration: integrations/hvac/airzone/configuration.md
 
       - Charge véhicules:
-          - Lektrico: integrations/ev/lektrico.md
-          - TerraAC: integrations/ev/terraac.md
-          - EVLink Pro: integrations/ev/evlink-pro.md
+          - Lektrico:
+              - Présentation: integrations/ev/lektrico/index.md
+              - Installation: integrations/ev/lektrico/installation.md
+              - Configuration: integrations/ev/lektrico/configuration.md
+
+          - TerraAC:
+              - Présentation: integrations/ev/terraac/index.md
+              - Installation: integrations/ev/terraac/installation.md
+              - Configuration: integrations/ev/terraac/configuration.md
+
+          - EVLink Pro:
+              - Présentation: integrations/ev/evlink-pro/index.md
+              - Installation: integrations/ev/evlink-pro/installation.md
+              - Configuration: integrations/ev/evlink-pro/configuration.md
 
       - Automation:
-          - Shelly: integrations/automation/shelly.md
-          - Crestron: integrations/automation/crestron.md
+          - Shelly:
+              - Présentation: integrations/automation/shelly/index.md
+              - Installation: integrations/automation/shelly/installation.md
+              - Configuration: integrations/automation/shelly/configuration.md
+
+          - Crestron:
+              - Présentation: integrations/automation/crestron/index.md
+              - Installation: integrations/automation/crestron/installation.md
+              - Configuration: integrations/automation/crestron/configuration.md
 
       - Notifications:
-          - Pushover: integrations/notifications/pushover.md
+          - Pushover:
+              - Présentation: integrations/notifications/pushover/index.md
+              - Installation: integrations/notifications/pushover/installation.md
+              - Configuration: integrations/notifications/pushover/configuration.md
 
       - Écosystèmes:
-          - Apple HomeKit: integrations/ecosystems/homekit.md
+          - Apple HomeKit:
+              - Présentation: integrations/ecosystems/homekit/index.md
+              - Installation: integrations/ecosystems/homekit/installation.md
+              - Configuration: integrations/ecosystems/homekit/configuration.md
+
+
+  # ------------------------------------------------------
+  # REST OF YOUR FILE UNCHANGED
+  # ------------------------------------------------------
 
   - Automatisations:
       - Vue d'ensemble: automations/overview.md
