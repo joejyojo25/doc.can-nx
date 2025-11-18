@@ -1,156 +1,154 @@
 /*******************************************************
- * CAN’N’X — FULL CUSTOM THEME FOR MKDOCS MATERIAL
- * (Sidebar + Tabs + Footer + Typography + Cards + More)
- * High Specificity + !important → Always Applies
+ * Can'nX – FULL custom theme for MkDocs Material
+ * Works with mkdocs-material 8/9
  *******************************************************/
 
 
 /* =====================================================
-   GLOBAL CONTENT TYPOGRAPHY
+   GLOBAL TYPOGRAPHY & CONTENT
 ===================================================== */
 
 :root,
 body,
 .md-content,
 .md-typeset {
-  font-size: 1rem !important;
-  line-height: 1.65 !important;
-  color: #1a1a1a !important;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #1a1a1a;
 }
 
 .md-content {
-  max-width: 980px !important;
-  margin: auto !important;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .md-typeset h1 {
-  font-size: 2.3rem !important;
-  font-weight: 600 !important;
+  font-size: 2.3rem;
+  font-weight: 600;
 }
 
 .md-typeset h2 {
-  font-size: 1.8rem !important;
-  font-weight: 600 !important;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .md-typeset h3 {
-  font-size: 1.4rem !important;
-  font-weight: 600 !important;
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
 
 /* =====================================================
-   HEADER (WHITE, PREMIUM)
+   HEADER (WHITE)
 ===================================================== */
 
 .md-header,
-.md-header__inner,
-.md-header-nav {
-  background: #ffffff !important;
-  color: #1a1a1a !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+.md-header__inner {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.md-header-nav__title {
-  color: #1a1a1a !important;
+.md-header__title {
+  color: #1a1a1a;
 }
 
 
 /* =====================================================
-   TOP TABS (CLEAN, COMPACT, PREMIUM)
+   TABS (MAIN NAV – 1rem FONT)
 ===================================================== */
 
 .md-tabs {
-  background: #ffffff !important;
-  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
-  padding: 0 !important;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
 }
 
 .md-tabs__list {
-  max-width: 980px !important;
-  margin: 0 auto !important;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-.md-tabs__item {
-  padding: 0.45rem 1rem !important;
-  font-size: 0.90rem !important;
-  font-weight: 500 !important;
-  border-radius: 6px !important;
-  margin-right: 0.2rem !important;
-  color: #444444 !important;
+/* clickable tab link */
+.md-tabs__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  font-size: 1rem;           /* requested size */
+  font-weight: 500;
+  border-radius: 6px;
+  margin-right: 0.3rem;
+  color: #444444;
 }
 
-.md-tabs__item:hover {
-  background: rgba(0,0,0,0.05) !important;
-  color: #000 !important;
+.md-tabs__link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
 }
 
-.md-tabs__item--active {
-  background: rgba(37,192,107,0.12) !important;
-  border-bottom: 2px solid #25c06b !important;
-  font-weight: 600 !important;
-  color: #000 !important;
+.md-tabs__item--active .md-tabs__link {
+  background: rgba(37, 192, 107, 0.14);
+  border-bottom: 2px solid #25c06b;
+  font-weight: 600;
+  color: #000000;
 }
 
-.md-tabs__item::after {
-  display: none !important;
+/* remove default underline animation */
+.md-tabs__link::after {
+  display: none;
 }
 
 
 /*******************************************************
- * SIDEBAR (WIDE + COMPACT + CLEAN)
+ * SIDEBAR – WIDER + COMPACT
  *******************************************************/
 
 .md-sidebar--primary {
-  width: 260px !important;
-  min-width: 260px !important;
-  background: #ffffff !important;
-  border-right: 1px solid rgba(0,0,0,0.08) !important;
+  width: 260px;
+  min-width: 260px;
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.md-sidebar--primary .md-nav {
-  padding-top: 0.3rem !important;
-}
-
+/* section label (e.g. “Intégrations”) */
 .md-sidebar--primary .md-nav__title {
-  font-size: 0.78rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.03em !important;
-  padding: 0.6rem 1rem 0.25rem 1rem !important;
-  margin: 0 !important;
-  color: rgba(0,0,0,0.45) !important;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.6rem 1rem 0.25rem 1rem;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.45);
 }
 
-.md-sidebar--primary .md-nav__list {
-  padding: 0.2rem 0 !important;
-}
-
-.md-sidebar--primary .md-nav__section {
-  margin: 0 !important;
-  padding: 0.2rem 0 !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-}
-
+/* main links */
 .md-sidebar--primary .md-nav__link {
-  padding: 0.40rem 1rem !important;
-  font-size: 0.90rem !important;
-  border-radius: 6px !important;
+  padding: 0.40rem 1rem;
+  font-size: 0.92rem;
+  border-radius: 6px;
 }
 
+/* children links (level 2) */
 .md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.4rem !important;
-  font-size: 0.84rem !important;
+  padding-left: 1.4rem;
+  font-size: 0.85rem;
 }
 
+/* hover + active */
 .md-sidebar--primary .md-nav__link:hover {
-  background: rgba(0,0,0,0.05) !important;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .md-sidebar--primary .md-nav__link--active {
-  background: rgba(37,192,107,0.15) !important;
-  border-left: 3px solid #25c06b !important;
-  padding-left: calc(1rem - 3px) !important;
-  font-weight: 600 !important;
+  background: rgba(37, 192, 107, 0.15);
+  border-left: 3px solid #25c06b;
+  padding-left: calc(1rem - 3px);
+  font-weight: 600;
+}
+
+/* keep normal text font for titles/links; DO NOT touch .md-icon */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav__link {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 
@@ -159,24 +157,24 @@ body,
  *******************************************************/
 
 .card-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-  gap: 1.4rem !important;
-  margin: 2rem 0 !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin: 2rem 0;
 }
 
 .card {
-  padding: 1.6rem !important;
-  border-radius: 12px !important;
-  background: #ffffff !important;
-  border: 1px solid #eee !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
-  transition: 0.15s ease !important;
+  padding: 1.6rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
 }
 
 
@@ -185,120 +183,126 @@ body,
  *******************************************************/
 
 .btn {
-  padding: 0.7rem 1.6rem !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  display: inline-block !important;
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
-  background: #25c06b !important;
-  color: #ffffff !important;
+  background: #25c06b;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: #1fa85d !important;
+  background: #1fa85d;
 }
 
 .btn-secondary {
-  background: #ffffff !important;
-  border: 1px solid #25c06b !important;
-  color: #25c06b !important;
+  background: #ffffff;
+  border: 1px solid #25c06b;
+  color: #25c06b;
 }
 
 .btn-secondary:hover {
-  background: #eafff2 !important;
+  background: #eafff2;
 }
 
 
 /*******************************************************
- * TABLES, QUOTES, CODE BLOCKS
+ * TABLES, BLOCKQUOTES, CODE
  *******************************************************/
 
 .md-typeset table:not([class]) {
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 10px !important;
-  overflow: hidden !important;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .md-typeset blockquote {
-  border-left: 5px solid #25c06b !important;
-  background: #f3fff7 !important;
-  padding: 1rem !important;
-  border-radius: 6px !important;
+  border-left: 5px solid #25c06b;
+  background: #f3fff7;
+  padding: 1rem;
+  border-radius: 6px;
 }
 
 .md-typeset pre {
-  border-radius: 10px !important;
-  background: #f8f9fa !important;
-  padding: 1rem !important;
-  box-shadow: inset 0 0 0 1px #e6e8eb !important;
+  border-radius: 10px;
+  background: #f8f9fa;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px #e6e8eb;
 }
 
 
 /*******************************************************
- * FOOTER NAVIGATION — ONLY UNDER CONTENT
+ * FOOTER – PREVIOUS / NEXT (COMPACT)
  *******************************************************/
 
-/* Remove original full-width footer background */
+/* base footer bar */
 .md-footer {
-  background: transparent !important;
-  box-shadow: none !important;
-  border-top: none !important;
+  background: #212121;
+  color: #ffffff;
 }
 
-/* New compact footer nav aligned with content */
-.md-footer-nav {
-  width: calc(100% - 260px) !important;
-  margin-left: auto !important;
-  background: #212121 !important;
-  padding: 0.3rem 1rem !important;
-  display: flex !important;
-  justify-content: space-between !important;
+/* navigation area with previous/next */
+.md-footer__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.25rem 0.5rem;
 }
 
-/* Smaller next/previous buttons */
-.md-footer-nav__link {
-  padding: 0.25rem 0.6rem !important;
-  font-size: 0.75rem !important;
+/* links (previous / next) */
+.md-footer__link {
+  padding: 0.25rem 0.5rem;
 }
 
-.md-footer-nav__title {
-  font-size: 0.68rem !important;
+/* button wrapper */
+.md-footer__button {
+  font-size: 0.8rem;
 }
 
-.md-icon svg {
-  width: 0.7rem !important;
-  height: 0.7rem !important;
+/* text */
+.md-footer__title {
+  font-size: 0.78rem;
+}
+
+.md-footer__direction {
+  font-size: 0.70rem;
+  opacity: 0.85;
+}
+
+/* smaller arrow icons */
+.md-footer__button .md-icon svg {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 
 /*******************************************************
- * FOOTER COPYRIGHT
+ * FOOTER META (COPYRIGHT + SOCIAL)
  *******************************************************/
 
 .md-footer-meta {
-  background: #111111 !important;
-  color: #ffffff !important;
-  font-size: 0.75rem !important;
-  padding: 0.6rem 1rem !important;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 0.6rem 1rem;
 }
 
 
 /*******************************************************
- * RESPONSIVE ADAPTATION
+ * RESPONSIVE
  *******************************************************/
 
 @media (max-width: 960px) {
-
   .md-sidebar--primary {
-    width: 100% !important;
-    min-width: 100% !important;
+    width: 100%;
+    min-width: 100%;
   }
 
-  .md-footer-nav {
-    width: 100% !important;
-    margin-left: 0 !important;
+  .md-footer__inner {
+    padding: 0.35rem 0.75rem;
   }
 }
