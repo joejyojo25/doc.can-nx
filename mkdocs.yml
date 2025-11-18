@@ -10,12 +10,12 @@ theme:
   # ------------------------------
   # 1Home-like theme features
   # ------------------------------
-  features:
+ features:
     - navigation.instant
+    - navigation.tracking
     - navigation.sections
     - navigation.expand
-    - navigation.tracking
-    - navigation.tabs
+    - navigation.top
     - navigation.indexes
     - toc.follow
     - search.suggest
@@ -24,7 +24,6 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - header.autohide
-    - navigation.footer
 
   # ------------------------------
   # Colors (1Home-like, clean white)
