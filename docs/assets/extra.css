@@ -1,11 +1,12 @@
 /*******************************************************
- * CAN’N’X — COMPLETE OVERRIDE FOR MKDOCS MATERIAL
- * High-specificity + !important → always applied
+ * CAN’N’X — FULL CUSTOM THEME FOR MKDOCS MATERIAL
+ * (Sidebar + Tabs + Footer + Typography + Cards + More)
+ * High Specificity + !important → Always Applies
  *******************************************************/
 
 
 /* =====================================================
-   GLOBAL TYPOGRAPHY
+   GLOBAL CONTENT TYPOGRAPHY
 ===================================================== */
 
 :root,
@@ -17,28 +18,88 @@ body,
   color: #1a1a1a !important;
 }
 
+.md-content {
+  max-width: 980px !important;
+  margin: auto !important;
+}
+
 .md-typeset h1 {
   font-size: 2.3rem !important;
   font-weight: 600 !important;
-  margin-top: 2rem !important;
 }
 
 .md-typeset h2 {
   font-size: 1.8rem !important;
   font-weight: 600 !important;
-  margin-top: 1.8rem !important;
 }
 
 .md-typeset h3 {
   font-size: 1.4rem !important;
   font-weight: 600 !important;
-  margin-top: 1.6rem !important;
 }
 
 
 /* =====================================================
-   SIDEBAR — WIDER + COMPACT
+   HEADER (WHITE, PREMIUM)
 ===================================================== */
+
+.md-header,
+.md-header__inner,
+.md-header-nav {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.md-header-nav__title {
+  color: #1a1a1a !important;
+}
+
+
+/* =====================================================
+   TOP TABS (CLEAN, COMPACT, PREMIUM)
+===================================================== */
+
+.md-tabs {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  padding: 0 !important;
+}
+
+.md-tabs__list {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+}
+
+.md-tabs__item {
+  padding: 0.45rem 1rem !important;
+  font-size: 0.90rem !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  margin-right: 0.2rem !important;
+  color: #444444 !important;
+}
+
+.md-tabs__item:hover {
+  background: rgba(0,0,0,0.05) !important;
+  color: #000 !important;
+}
+
+.md-tabs__item--active {
+  background: rgba(37,192,107,0.12) !important;
+  border-bottom: 2px solid #25c06b !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
+.md-tabs__item::after {
+  display: none !important;
+}
+
+
+/*******************************************************
+ * SIDEBAR (WIDE + COMPACT + CLEAN)
+ *******************************************************/
 
 .md-sidebar--primary {
   width: 260px !important;
@@ -52,12 +113,22 @@ body,
 }
 
 .md-sidebar--primary .md-nav__title {
-  font-size: 0.80rem !important;
+  font-size: 0.78rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.03em !important;
-  padding: 0.6rem 1rem 0.3rem 1rem !important;
+  padding: 0.6rem 1rem 0.25rem 1rem !important;
   margin: 0 !important;
-  color: rgba(0,0,0,0.5) !important;
+  color: rgba(0,0,0,0.45) !important;
+}
+
+.md-sidebar--primary .md-nav__list {
+  padding: 0.2rem 0 !important;
+}
+
+.md-sidebar--primary .md-nav__section {
+  margin: 0 !important;
+  padding: 0.2rem 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
 }
 
 .md-sidebar--primary .md-nav__link {
@@ -76,16 +147,16 @@ body,
 }
 
 .md-sidebar--primary .md-nav__link--active {
-  background: rgba(37, 192, 107, 0.12) !important;
+  background: rgba(37,192,107,0.15) !important;
   border-left: 3px solid #25c06b !important;
   padding-left: calc(1rem - 3px) !important;
   font-weight: 600 !important;
 }
 
 
-/* =====================================================
-   CARD GRID (HOME PAGE)
-===================================================== */
+/*******************************************************
+ * HOMEPAGE CARDS
+ *******************************************************/
 
 .card-grid {
   display: grid !important;
@@ -98,31 +169,64 @@ body,
   padding: 1.6rem !important;
   border-radius: 12px !important;
   background: #ffffff !important;
-  border: 1px solid #eeeeee !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  border: 1px solid #eee !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
   transition: 0.15s ease !important;
 }
 
 .card:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
 }
 
 
-/* =====================================================
-   BLOCKQUOTES + TABLES + CODE
-===================================================== */
+/*******************************************************
+ * BUTTONS
+ *******************************************************/
+
+.btn {
+  padding: 0.7rem 1.6rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+.btn-primary {
+  background: #25c06b !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background: #1fa85d !important;
+}
+
+.btn-secondary {
+  background: #ffffff !important;
+  border: 1px solid #25c06b !important;
+  color: #25c06b !important;
+}
+
+.btn-secondary:hover {
+  background: #eafff2 !important;
+}
+
+
+/*******************************************************
+ * TABLES, QUOTES, CODE BLOCKS
+ *******************************************************/
+
+.md-typeset table:not([class]) {
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
 
 .md-typeset blockquote {
   border-left: 5px solid #25c06b !important;
   background: #f3fff7 !important;
   padding: 1rem !important;
   border-radius: 6px !important;
-}
-
-.md-typeset table:not([class]) {
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 10px !important;
 }
 
 .md-typeset pre {
@@ -137,26 +241,24 @@ body,
  * FOOTER NAVIGATION — ONLY UNDER CONTENT
  *******************************************************/
 
-/* Hide original full-width footer bar */
+/* Remove original full-width footer background */
 .md-footer {
   background: transparent !important;
   box-shadow: none !important;
   border-top: none !important;
 }
 
-/* Rebuild footer nav ONLY under main content */
+/* New compact footer nav aligned with content */
 .md-footer-nav {
-  width: calc(100% - 260px) !important;  /* subtract sidebar width */
+  width: calc(100% - 260px) !important;
   margin-left: auto !important;
-  margin-right: 0 !important;
   background: #212121 !important;
   padding: 0.3rem 1rem !important;
   display: flex !important;
   justify-content: space-between !important;
-  box-sizing: border-box !important;
 }
 
-/* Smaller buttons */
+/* Smaller next/previous buttons */
 .md-footer-nav__link {
   padding: 0.25rem 0.6rem !important;
   font-size: 0.75rem !important;
@@ -167,13 +269,13 @@ body,
 }
 
 .md-icon svg {
-  width: 0.70rem !important;
-  height: 0.70rem !important;
+  width: 0.7rem !important;
+  height: 0.7rem !important;
 }
 
 
 /*******************************************************
- * FOOTER COPYRIGHT (KEEP FULL WIDTH)
+ * FOOTER COPYRIGHT
  *******************************************************/
 
 .md-footer-meta {
@@ -185,7 +287,7 @@ body,
 
 
 /*******************************************************
- * MOBILE FIXES
+ * RESPONSIVE ADAPTATION
  *******************************************************/
 
 @media (max-width: 960px) {
