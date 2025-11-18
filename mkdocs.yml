@@ -8,7 +8,7 @@ theme:
   language: fr
 
   # ------------------------------
-  # 1Home-like theme features
+  # Theme Features
   # ------------------------------
   features:
     - navigation.instant
@@ -29,7 +29,7 @@ theme:
     - navigation.footer
 
   # ------------------------------
-  # Colors (1Home-like, clean white)
+  # Colors (Clean white with green accent)
   # ------------------------------
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -58,13 +58,13 @@ theme:
   favicon: assets/favicon.png
 
 # ------------------------------
-# Load enhanced UI (CSS)
+# Load Custom CSS (Path matches your repository structure)
 # ------------------------------
 extra_css:
   - docs/assets/extra.css
 
 # ------------------------------
-# Social footer
+# Social footer links
 # ------------------------------
 extra:
   social:
@@ -76,7 +76,7 @@ extra:
       link: https://can-nx.shop
 
 # ------------------------------
-# Plugins (1Home-like)
+# Plugins
 # ------------------------------
 plugins:
   - search:
@@ -106,19 +106,16 @@ markdown_extensions:
       alternate_style: true
 
 # ------------------------------
-# NAVIGATION (1Home-like grouping)
+# NAVIGATION (Your complete structure)
 # ------------------------------
 nav:
-
   - Accueil: index.md
-
   - Guide de démarrage:
       - Introduction: getting-started/introduction.md
       - Prérequis système: getting-started/requirements.md
       - Assistant de configuration: getting-started/setup-wizard.md
       - Gestion des utilisateurs: getting-started/user-accounts.md
       - Première connexion: getting-started/first-login.md
-
   - Produits:
       - Vue d'ensemble: products/overview.md
       - Kloud'nX:
@@ -128,7 +125,6 @@ nav:
           - Licences: products/kloudnx/licenses.md
           - Node-RED: products/kloudnx/node-red.md
           - API REST: products/kloudnx/api.md
-
       - Infini KNX:
           - Présentation: products/infinix/overview.md
           - Installation: products/infinix/installation.md
@@ -136,42 +132,35 @@ nav:
           - Configurateur: products/infinix/configurator.md
           - Finitions Meljac: products/infinix/finishes.md
           - Gravure: products/infinix/engraving.md
-
       - Boss'nX:
           - Présentation: products/bossnx/overview.md
           - Installation: products/bossnx/installation.md
           - Configuration: products/bossnx/configuration.md
           - Scénarios: products/bossnx/scenarios.md
-
       - Chart'nX:
           - Présentation: products/chartnx/overview.md
           - Installation: products/chartnx/installation.md
           - Graphiques: products/chartnx/charts.md
           - Export de données: products/chartnx/export.md
-
       - Emergy'nX:
           - Présentation: products/emergynx/overview.md
           - Installation: products/emergynx/installation.md
           - Configuration: products/emergynx/configuration.md
           - Gestion d'urgence: products/emergynx/emergency.md
-
       - Speak'nX:
           - Présentation: products/speaknx/overview.md
           - Installation: products/speaknx/installation.md
           - Configuration vocale: products/speaknx/voice-config.md
           - Commandes: products/speaknx/commands.md
-
       - Pool'nX:
           - Présentation: products/poolnx/overview.md
           - Installation: products/poolnx/installation.md
           - Configuration: products/poolnx/configuration.md
           - Maintenance: products/poolnx/maintenance.md
-
       - Mod'nX:
           - Présentation: products/modnx/overview.md
           - Installation: products/modnx/installation.md
           - Configuration: products/modnx/configuration.md
-
   - Intégrations:
       - Vue d'ensemble: integrations/overview.md
       - Protocoles:
@@ -179,80 +168,63 @@ nav:
           - Modbus: integrations/modbus.md
           - MQTT: integrations/mqtt.md
           - HTTP API: integrations/http-api.md
-
       - Contrôle d'accès:
           - 2N: integrations/access-control/2n.md
           - Doorbird: integrations/access-control/doorbird.md
           - Nuki: integrations/access-control/nuki.md
           - Gude: integrations/access-control/gude.md
-
       - Vidéosurveillance:
           - Hikvision: integrations/cameras/hikvision.md
-
       - Audio:
           - Sonos: integrations/audio/sonos.md
           - Klereo: integrations/audio/klereo.md
-
       - Piscine:
           - Poolcop: integrations/pool/poolcop.md
-
       - Climatisation:
           - Airzone: integrations/hvac/airzone.md
-
       - Charge véhicules:
           - Lektrico: integrations/ev/lektrico.md
           - TerraAC: integrations/ev/terraac.md
           - EVLink Pro: integrations/ev/evlink-pro.md
-
       - Automation:
           - Shelly: integrations/automation/shelly.md
           - Crestron: integrations/automation/crestron.md
-
       - Notifications:
           - Pushover: integrations/notifications/pushover.md
-
       - Écosystèmes:
           - Apple HomeKit: integrations/ecosystems/homekit.md
-
   - Automatisations:
-      - Vue d'ensemble: automations/overview.md
+      - Vue d'overview: automations/overview.md
       - Node-RED:
           - Introduction: automations/node-red/introduction.md
           - Premiers pas: automations/node-red/getting-started.md
           - Nodes Can'nX: automations/node-red/cannx-nodes.md
           - Exemples: automations/node-red/examples.md
-
       - Déclencheurs:
           - Temporels: automations/triggers/time.md
           - État des appareils: automations/triggers/device-state.md
           - Événements: automations/triggers/events.md
-
       - Exemples de scénarios:
           - Éclairage automatique: automations/examples/lighting.md
           - Gestion énergétique: automations/examples/energy.md
           - Sécurité: automations/examples/security.md
           - Confort: automations/examples/comfort.md
-
   - Configuration:
       - Réseau:
           - Configuration réseau: configuration/network/setup.md
           - VPN: configuration/network/vpn.md
           - Firewall: configuration/network/firewall.md
-
       - Utilisateurs & Permissions:
           - Gestion des utilisateurs: configuration/users/management.md
           - Rôles: configuration/users/roles.md
           - Authentification: configuration/users/authentication.md
-
       - Sauvegardes:
           - Configuration: configuration/backups/setup.md
           - Restauration: configuration/backups/restore.md
           - Automatisation: configuration/backups/automation.md
-
       - Mises à jour:
           - Processus: configuration/updates/process.md
           - Notes de version: configuration/updates/changelog.md
-
   - Dépannage:
       - Problèmes courants: troubleshooting/common-issues.md
       - Appareil ne répond pas: troubleshooting/device-not-responding.md
@@ -260,29 +232,24 @@ nav:
           - Diagnostics: troubleshooting/knx/diagnostics.md
           - Bus KNX: troubleshooting/knx/bus.md
           - Télégrammes: troubleshooting/knx/telegrams.md
-
       - Logs:
           - Accès aux logs: troubleshooting/logs/access.md
           - Analyse: troubleshooting/logs/analysis.md
-
       - Réseau:
           - Connectivité: troubleshooting/network/connectivity.md
           - Performance: troubleshooting/network/performance.md
-
   - FAQ:
       - Général: faq/general.md
       - Produits: faq/products.md
       - Installation: faq/installation.md
       - Licences: faq/licenses.md
       - Support: faq/support.md
-
   - Ressources:
       - Téléchargements: resources/downloads.md
       - Formations: resources/training.md
       - Vidéos: resources/videos.md
       - Documentation technique: resources/technical-docs.md
       - Boutique: resources/shop.md
-
   - Contact & Support:
       - Nous contacter: contact/contact.md
       - Support technique: contact/support.md
