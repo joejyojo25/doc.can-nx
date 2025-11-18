@@ -20,21 +20,21 @@ jobs:
         with:
           python-version: "3.x"
 
-      # INSTALL ALL REQUIRED PACKAGES
+      # INSTALL ALL REQUIRED PACKAGES (Combined for efficiency, removed 'mkdocs-tagging' as it failed to install)
       - name: Install MkDocs and Plugins
         run: |
-          pip install mkdocs-material
-          pip install mkdocs-section-index
-          pip install mkdocs-material-extensions
-          pip install mkdocs-git-revision-date-localized-plugin
-          pip install Pillow qrcode cairosvg
-          pip install mkdocs-gen-files
-          pip install mkdocs-literate-nav
-          pip install markdown-include
-          pip install mkdocs-tagging # Corrected package name for 'tags' functionality
-          pip install mkdocs-glightbox
-          pip install mkdocs-awesome-pages-plugin
-          pip install mkdocs-social-cards-plugin
+          pip install \
+            mkdocs-material \
+            mkdocs-section-index \
+            mkdocs-material-extensions \
+            mkdocs-git-revision-date-localized-plugin \
+            Pillow qrcode cairosvg \
+            mkdocs-gen-files \
+            mkdocs-literate-nav \
+            markdown-include \
+            mkdocs-glightbox \
+            mkdocs-awesome-pages-plugin \
+            mkdocs-social-cards-plugin
 
       - name: Build MkDocs Site
         run: mkdocs build --verbose # Added --verbose to check for errors in the logs
