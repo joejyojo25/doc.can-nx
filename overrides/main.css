@@ -1,105 +1,263 @@
 /*******************************************************
- * Can'nX – CSS Variables Override (FINAL FIX)
+ * Can'nX – COMPLETE CUSTOM THEME OVERRIDE
+ * Tabs: Compact
+ * Sidebar: 300px
+ * Footer: Minimal under content only
  *******************************************************/
 
-:root {
-  /* =====================================================
-     HIGH-PRIORITY COLOR VARIABLE OVERRIDES
-     This targets the variables used by the theme's internal footer/header logic.
-     ===================================================== */
-  
-  /* Primary background color for the header/content wrapper (Keeping it white) */
-  --md-default-bg-color: #ffffff !important; 
-  
-  /* Footer Background Color (The Next/Previous Bar) - Set to your brand green */
-  --md-footer-bg-color--primary: #25c06b !important;
-  
-  /* Footer Text Color */
-  --md-footer-fg-color: #ffffff !important;
-
-  /* Copyright Bar Color (Kept dark gray) */
-  --md-footer-bg-color--secondary: #111111 !important;
-}
-
-/* --- GLOBAL LAYOUT FIXES (Retained) --- */
-
-/* 1. Ensure the content area is constrained */
-.md-content {
-  max-width: 980px !important;
-  margin: 0 auto !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* --- TYPOGRAPHY (Retained) --- */
-
-/* Base typography: Reduced and forced */
-.md-typeset {
-  font-size: 0.90rem !important; 
-  line-height: 1.6 !important; 
-  color: #1a1a1a !important;
-}
 
 /* =====================================================
-    FOOTER CLASS OVERRIDES (To handle shape/size/links)
+   GLOBAL CONTENT TYPOGRAPHY
 ===================================================== */
 
-/* 1. Ensure the main footer container is transparent */
-.md-footer {
-  background-color: transparent !important; 
-  border-top: none !important;
+.md-content {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-/* 2. Target the *navigation bar* for size and shape */
-.md-footer__inner {
-  /* Use the background variable, but ensure constraints are applied */
-  color: #ffffff !important;
-  border: none !important; 
-  border-radius: 6px !important; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #1a1a1a;
+}
 
-  /* COMPACT HEIGHT */
-  padding: 0.4rem 0.8rem !important; 
-  
-  /* CONSTRAIN TO CONTENT WIDTH */
+.md-typeset h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+
+.md-typeset h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.md-typeset h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   HEADER (WHITE)
+===================================================== */
+
+.md-header,
+.md-header__inner {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =====================================================
+   TABS (STYLE A — COMPACT)
+   Font-size = 1rem (your requirement)
+===================================================== */
+
+.md-tabs {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 0 !important;
+}
+
+.md-tabs__list {
   max-width: 980px !important;
-  margin: 1.5rem auto 1.5rem !important; /* Center it and give space */
+  margin: 0 auto !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
 }
 
-/* Footer links and icons */
+.md-tabs__item {
+  display: inline-block !important;
+}
+
+.md-tabs__link {
+  padding: 0.30rem 0.65rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  margin-right: 0.20rem !important;
+  color: #444444 !important;
+  white-space: nowrap !important;
+}
+
+.md-tabs__link:hover {
+  background: rgba(0,0,0,0.05) !important;
+  color: #000 !important;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  background: rgba(37,192,107,0.16) !important;
+  border-bottom: 2px solid #25c06b !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
+.md-tabs__link::after {
+  display: none !important; /* Remove underline animation */
+}
+
+
+/*******************************************************
+ * SIDEBAR (WIDTH = 300px, COMPACT, CLEAN)
+ *******************************************************/
+
+.md-sidebar--primary {
+  width: 300px !important;
+  min-width: 300px !important;
+  background: #ffffff !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Section Titles */
+.md-sidebar--primary .md-nav__title {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  padding: 0.6rem 1rem 0.3rem !important;
+  color: rgba(0,0,0,0.45) !important;
+  font-weight: 600 !important;
+}
+
+/* Main Links */
+.md-sidebar--primary .md-nav__link {
+  font-family: "Roboto", sans-serif !important;
+  padding: 0.42rem 1rem !important;
+  font-size: 0.92rem !important;
+  border-radius: 6px !important;
+}
+
+/* Level 2 links */
+.md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
+  padding-left: 1.45rem !important;
+  font-size: 0.85rem !important;
+}
+
+.md-sidebar--primary .md-nav__link:hover {
+  background: rgba(0,0,0,0.05) !important;
+}
+
+.md-sidebar--primary .md-nav__link--active {
+  background: rgba(37,192,107,0.16) !important;
+  border-left: 3px solid #25c06b !important;
+  padding-left: calc(1rem - 3px) !important;
+  font-weight: 600 !important;
+}
+
+/* FIX clipped glyphs from Roboto */
+.md-sidebar--primary * {
+  font-family: "Roboto", sans-serif !important;
+}
+
+
+/*******************************************************
+ * CARDS, TABLES, BLOCKQUOTES, CODE
+ *******************************************************/
+
+.card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1.4rem !important;
+  margin: 2rem 0 !important;
+}
+
+.card {
+  padding: 1.6rem !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #eeeeee !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+  transition: 0.15s !important;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 10px !important;
+}
+
+.md-typeset blockquote {
+  border-left: 5px solid #25c06b !important;
+  background: #f3fff7 !important;
+  padding: 1rem !important;
+  border-radius: 6px !important;
+}
+
+.md-typeset pre {
+  border-radius: 10px !important;
+  background: #f8f9fa !important;
+  padding: 1rem !important;
+}
+
+
+/*******************************************************
+ * FOOTER (STYLE B — LIGHT, MINIMAL, UNDER CONTENT ONLY)
+ *******************************************************/
+
+/* Remove full-width footer look */
+.md-footer {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Only the center content width has a footer */
+.md-footer__inner {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  background: #f5f5f5 !important;
+  color: #1a1a1a !important;
+  padding: 0.35rem 0.6rem !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+/* previous / next buttons */
 .md-footer__link {
-  padding: 0.15rem 0.3rem !important; 
-  color: #ffffff !important; 
-  opacity: 0.9;
+  padding: 0.25rem 0.45rem !important;
+}
+
+.md-footer__title {
+  font-size: 0.78rem !important;
+}
+
+.md-footer__direction {
+  font-size: 0.7rem !important;
+  opacity: 0.8 !important;
 }
 
 .md-footer__button .md-icon svg {
-  fill: #ffffff !important; 
+  width: 0.7rem !important;
+  height: 0.7rem !important;
 }
 
-/* 3. Copyright bar (Dark, full width) - Using the variable ensures color */
+
+/*******************************************************
+ * COPYRIGHT FOOTER
+ *******************************************************/
+
 .md-footer-meta {
+  background: #111 !important;
   color: #ffffff !important;
   font-size: 0.75rem !important;
-  padding: 0.6rem 1rem !important;
-  width: 100% !important; 
+  padding: 0.55rem 1rem !important;
 }
 
-/* =====================================================
- * RESPONSIVE (Retained)
- *===================================================== */
+
+/*******************************************************
+ * MOBILE BEHAVIOUR
+ *******************************************************/
 
 @media (max-width: 960px) {
-  /* Mobile: Allow full width and remove corner rounding */
-  .md-footer {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 0.5rem !important; 
+
+  .md-sidebar--primary {
+    width: 100% !important;
+    min-width: 100% !important;
   }
 
   .md-footer__inner {
-    margin: 0 !important;
-    max-width: none !important;
-    border-radius: 0 !important; 
+    margin: 0.5rem !important;
+    width: auto !important;
   }
 }
