@@ -224,7 +224,7 @@ export function EmergynxPage() {
               <ImageWithFallback
                 src={emergynxProduct}
                 alt="Emergy'nX Energy Manager"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
           </motion.div>
@@ -625,7 +625,7 @@ export function EmergynxPage() {
               <ImageWithFallback
                 src={emergynxProduct}
                 alt="Emergy'nX"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
             <h2 className="text-4xl mb-8">Prêt à optimiser votre énergie ?</h2>

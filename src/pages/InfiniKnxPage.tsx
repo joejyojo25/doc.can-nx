@@ -161,7 +161,7 @@ export function InfiniKnxPage() {
               <ImageWithFallback
                 src={infiniKnxProduct}
                 alt="Infini KNX - Bouton rotatif premium"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
           </motion.div>
@@ -403,8 +403,8 @@ export function InfiniKnxPage() {
                     className="w-full max-w-sm"
                   >
                     <ImageWithFallback
-                      src={infiniKnxConfigurator}
-                      alt="Infini KNX avec gravures personnalisées - SPOTS, CEILING, SCONCES"
+                      src="https://images.unsplash.com/photo-1760894852056-c62d3b884793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBjdXN0b21pemF0aW9uJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc2MjM1MDUzNXww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="Configurateur Infini KNX - Personnalisation et design d'interrupteurs intelligents"
                       className="w-full h-auto rounded-lg shadow-2xl"
                     />
                   </motion.div>

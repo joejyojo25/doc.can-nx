@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { BrandLogo } from './BrandLogo';
 import { SearchDialog } from './SearchDialog';
 import kloudnxProductImage from 'figma:asset/f4e7e08a8f77640a41e6d024869598c4050d7f0d.png';
 import poolnxProductImage from 'figma:asset/6b039210627c783e16b5de6f2c223b0fa9c5ae6c.png';
@@ -67,49 +68,49 @@ const integrations = [
   {
     category: 'Contrôle d\'accès & Sécurité',
     items: [
-      { name: '2N', href: '#integration-2n', icon: Phone, description: 'Interphones IP' },
-      { name: 'DoorBird', href: '#integration-doorbird', icon: DoorOpen, description: 'Portiers vidéo' },
-      { name: 'Hikvision', href: '#integration-hikvision', icon: Camera, description: 'Vidéosurveillance' },
-      { name: 'Nuki', href: '#integration-nuki', icon: Lock, description: 'Serrures connectées' },
+      { name: '2N', brandId: '2n', href: '#integration-2n', icon: Phone, description: 'Interphones IP' },
+      { name: 'DoorBird', brandId: 'doorbird', href: '#integration-doorbird', icon: DoorOpen, description: 'Portiers vidéo' },
+      { name: 'Hikvision', brandId: 'hikvision', href: '#integration-hikvision', icon: Camera, description: 'Vidéosurveillance' },
+      { name: 'Nuki', brandId: 'nuki', href: '#integration-nuki', icon: Lock, description: 'Serrures connectées' },
     ]
   },
   {
     category: 'Climatisation',
     items: [
-      { name: 'Airzone', href: '#integration-airzone', icon: Wifi, description: 'Climatisation zonée + Aidoo' },
+      { name: 'Airzone', brandId: 'airzone', href: '#integration-airzone', icon: Wifi, description: 'Climatisation zonée + Aidoo' },
     ]
   },
   {
     category: 'Gestion de Piscine',
     items: [
-      { name: 'PoolCop', href: '#integration-poolcop', icon: Waves, description: 'Régulation piscine' },
-      { name: 'Klereo', href: '#integration-klereo', icon: Waves, description: 'Régulation piscine' },
+      { name: 'PoolCop', brandId: 'poolcop', href: '#integration-poolcop', icon: Waves, description: 'Régulation piscine' },
+      { name: 'Klereo', brandId: 'klereo', href: '#integration-klereo', icon: Waves, description: 'Régulation piscine' },
     ]
   },
   {
     category: 'Audio & Multimédia',
     items: [
-      { name: 'Crestron', href: '#integration-crestron', icon: Headphones, description: 'Automatisation premium' },
-      { name: 'Sonos', href: '#integration-sonos', icon: Music, description: 'Audio multiroom' },
+      { name: 'Crestron', brandId: 'crestron', href: '#integration-crestron', icon: Headphones, description: 'Automatisation premium' },
+      { name: 'Sonos', brandId: 'sonos', href: '#integration-sonos', icon: Music, description: 'Audio multiroom' },
     ]
   },
   {
     category: 'Bornes de Recharge VE',
     items: [
-      { name: 'ABB Terra AC', href: '#integration-terraac', icon: Zap, description: 'Borne AC ABB' },
-      { name: 'Evlink Pro', href: '#integration-evlinkpro', icon: Zap, description: 'Schneider Electric' },
-      { name: 'Lektrico', href: '#integration-lektrico', icon: Zap, description: 'Charge intelligente' },
+      { name: 'ABB Terra AC', brandId: 'abb-terraac', href: '#integration-terraac', icon: Zap, description: 'Borne AC ABB' },
+      { name: 'Evlink Pro', brandId: 'evlink-pro', href: '#integration-evlinkpro', icon: Zap, description: 'Schneider Electric' },
+      { name: 'Lektrico', brandId: 'lektrico', href: '#integration-lektrico', icon: Zap, description: 'Charge intelligente' },
     ]
   },
   {
     category: 'IoT & Protocoles',
     items: [
-      { name: 'KNX', href: '#integration-knx', icon: Network, description: 'Standard mondial' },
-      { name: 'HomeKit', href: '#integration-homekit', icon: Home, description: 'Apple HomeKit' },
-      { name: 'Pushover', href: '#integration-pushover', icon: MessageSquare, description: 'Notifications push' },
-      { name: 'Shelly', href: '#integration-shelly', icon: Zap, description: 'Appareils IoT' },
-      { name: 'Modbus TCP/RTU', href: '#integration-modbus', icon: Server, description: 'Protocole industriel' },
-      { name: 'Gude', href: '#integration-gude', icon: Plug, description: 'PDU intelligents' },
+      { name: 'KNX', brandId: 'knx', href: '#integration-knx', icon: Network, description: 'Standard mondial' },
+      { name: 'HomeKit', brandId: 'homekit', href: '#integration-homekit', icon: Home, description: 'Apple HomeKit' },
+      { name: 'Pushover', brandId: 'pushover', href: '#integration-pushover', icon: MessageSquare, description: 'Notifications push' },
+      { name: 'Shelly', brandId: 'shelly', href: '#integration-shelly', icon: Zap, description: 'Appareils IoT' },
+      { name: 'Modbus TCP/RTU', brandId: 'modbus', href: '#integration-modbus', icon: Server, description: 'Protocole industriel' },
+      { name: 'Gude', brandId: 'gude', href: '#integration-gude', icon: Plug, description: 'PDU intelligents' },
     ]
   },
 ];
@@ -726,9 +727,20 @@ export function Header() {
                             className="group flex items-center gap-4 p-4 rounded-xl hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 border border-transparent hover:border-gray-200 transition-all"
                             onClick={closeIntegrationsMenu}
                           >
-                            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-[#0CB14B] group-hover:to-[#cd2653] rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md">
-                              <item.icon className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
-                            </div>
+                            {item.brandId ? (
+                              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                <BrandLogo 
+                                  brandId={item.brandId}
+                                  size="sm"
+                                  showBackground={false}
+                                  className="group-hover:scale-110 transition-transform duration-300"
+                                />
+                              </div>
+                            ) : (
+                              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-[#0CB14B] group-hover:to-[#cd2653] rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md">
+                                <item.icon className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
+                              </div>
+                            )}
                             <div className="flex-1 min-w-0">
                               <div className="text-gray-900 group-hover:text-[#0CB14B] transition-colors">
                                 {item.name}

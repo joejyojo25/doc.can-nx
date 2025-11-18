@@ -1,12 +1,14 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Wifi } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { BrandLogo } from './BrandLogo';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 
 const integrations = [
   {
     id: 'integration-2n',
+    brandId: '2n',
     name: '2N',
     category: 'Contrôle d\'accès',
     description: 'Intégrez vos interphones et portiers vidéo 2N avec contrôle d\'accès avancé',
@@ -205,14 +207,24 @@ export function BrandIntegrations() {
               className="group"
             >
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 h-full">
-                {/* Image Header */}
-                <div className="relative h-48 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${integration.color} opacity-90`} />
-                  <ImageWithFallback
-                    src={integration.image}
-                    alt={integration.name}
-                    className="w-full h-full object-cover mix-blend-overlay"
-                  />
+                {/* Logo Header */}
+                <div className="relative h-48 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+                  {integration.brandId ? (
+                    <BrandLogo 
+                      brandId={integration.brandId}
+                      size="xl"
+                      showBackground={true}
+                    />
+                  ) : (
+                    <>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${integration.color} opacity-90`} />
+                      <ImageWithFallback
+                        src={integration.image}
+                        alt={integration.name}
+                        className="w-full h-full object-cover mix-blend-overlay"
+                      />
+                    </>
+                  )}
                   
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
@@ -223,7 +235,7 @@ export function BrandIntegrations() {
 
                   {/* Brand Name */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white text-2xl">{integration.name}</h3>
+                    <h3 className="text-gray-900 text-2xl">{integration.name}</h3>
                   </div>
                 </div>
 

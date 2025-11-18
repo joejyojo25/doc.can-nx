@@ -18,7 +18,7 @@ export interface SEOProps {
 }
 
 const DEFAULT_OG_IMAGE = 'https://can-nx.com/og-image.jpg'; // À remplacer par votre vraie image
-const SITE_NAME = 'Can-nX';
+const SITE_NAME = "Can'nX";
 const SITE_URL = 'https://can-nx.com';
 const TWITTER_HANDLE = '@cannx'; // À remplacer par votre vrai handle
 
@@ -31,7 +31,7 @@ export function SEOHead({
   ogImageAlt,
   twitterCard = 'summary_large_image',
   keywords = [],
-  author = 'Can-nX',
+  author = "Can'nX",
   publishedTime,
   modifiedTime,
   lang = 'fr',
@@ -41,7 +41,7 @@ export function SEOHead({
   useEffect(() => {
     // Set document title
     // Don't add site name if title already contains it
-    const finalTitle = title.includes('Can-nX') ? title : `${title} | ${SITE_NAME}`;
+    const finalTitle = title.includes("Can'nX") ? title : `${title} | ${SITE_NAME}`;
     document.title = finalTitle;
 
     // Set or update meta tags
@@ -73,7 +73,7 @@ export function SEOHead({
 
     // Basic meta tags
     setMetaTag('description', description);
-    if (keywords.length > 0) {
+    if (keywords && Array.isArray(keywords) && keywords.length > 0) {
       setMetaTag('keywords', keywords.join(', '));
     }
     setMetaTag('author', author);

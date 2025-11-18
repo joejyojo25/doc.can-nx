@@ -85,9 +85,12 @@ const partners = [
 ];
 
 const galleryImages = [
-  { src: poolnxProduct, alt: "Pool'nX - Vue d'ensemble", caption: 'Module KNX Rail DIN compact pour piscine' },
-  { src: 'https://images.unsplash.com/photo-1758530273582-2fa239a7feca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzd2ltbWluZyUyMHBvb2wlMjBhdXRvbWF0aW9uJTIwc3lzdGVtfGVufDF8fHx8MTc2MjE3ODU4OHww&ixlib=rb-4.1.0&q=80&w=1080', alt: "Pool'nX - Système automatisé", caption: 'Système de gestion de piscine automatisé' },
-  { src: 'https://images.unsplash.com/photo-1758530273222-440d6a8b0eea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb29sJTIwd2F0ZXIlMjBxdWFsaXR5fGVufDF8fHx8MTc2MjE3ODU4OHww&ixlib=rb-4.1.0&q=80&w=1080', alt: "Pool'nX - Qualité de l'eau", caption: 'Contrôle de qualité automatique' },
+  { src: 'https://images.unsplash.com/photo-1724688078741-6d89e587e809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzd2ltbWluZyUyMHBvb2x8ZW58MXx8fHwxNzYyMjExNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080', alt: "Piscine de luxe", caption: 'Piscine de luxe avec système automatisé' },
+  { src: 'https://images.unsplash.com/flagged/photo-1569880286597-0019858e19d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmZpbml0eSUyMHBvb2wlMjBzdW5zZXR8ZW58MXx8fHwxNzYyMjg5MDA3fDA&ixlib=rb-4.1.0&q=80&w=1080', alt: "Piscine à débordement au coucher du soleil", caption: 'Piscine à débordement avec vue panoramique' },
+  { src: 'https://images.unsplash.com/photo-1706808849802-8f876ade0d1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBwb29sJTIwZGVzaWdufGVufDF8fHx8MTc2MjI4OTAwOHww&ixlib=rb-4.1.0&q=80&w=1080', alt: "Design moderne de piscine", caption: 'Piscine au design contemporain' },
+  { src: 'https://images.unsplash.com/photo-1696953926526-48e8d253b942?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb29sJTIwd2F0ZXIlMjBibHVlfGVufDF8fHx8MTc2MjIxMTgwOXww&ixlib=rb-4.1.0&q=80&w=1080', alt: "Eau cristalline de piscine", caption: 'Qualité d\'eau optimale et contrôle automatisé' },
+  { src: 'https://images.unsplash.com/photo-1661890438590-b59b58246524?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNvcnQlMjBwb29sJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYyMjg5MDA5fDA&ixlib=rb-4.1.0&q=80&w=1080', alt: "Piscine resort tropical", caption: 'Piscine resort avec ambiance tropicale' },
+  { src: 'https://images.unsplash.com/photo-1559341709-f13b9686dbf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWNreWFyZCUyMHBvb2wlMjBob3VzZXxlbnwxfHx8fDE3NjIyODkwMDl8MA&ixlib=rb-4.1.0&q=80&w=1080', alt: "Piscine résidentielle", caption: 'Piscine résidentielle intégrée au jardin' },
 ];
 
 const navItems = [
@@ -177,7 +180,7 @@ export function PoolnxPage() {
               <ImageWithFallback
                 src={poolnxProduct}
                 alt="Pool'nX - Passerelle KNX pour piscine connectée"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
           </motion.div>
@@ -430,47 +433,89 @@ export function PoolnxPage() {
       </section>
 
       {/* Applications */}
-      <section id="applications" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="applications" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl mb-6">Domaine d'application - Recommandation</h2>
+            <motion.div
+              className="inline-block px-4 py-2 bg-cyan-500/10 rounded-full mb-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <span className="text-cyan-600">Applications recommandées</span>
+            </motion.div>
+            <h2 className="text-4xl sm:text-5xl mb-4">Domaine d'application</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Découvrez les cas d'usage optimaux pour exploiter pleinement les capacités de Pool'nX
+            </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="residential" className="border rounded-lg px-6 bg-white/80 backdrop-blur-sm">
-                <AccordionTrigger className="text-xl hover:no-underline">
-                  En résidentiel pour intégrer les systèmes (filtration, pompe, chauffage, éclairage, qualité de l'eau)
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ul className="space-y-2 text-gray-600 mt-4">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
-                      <span>Autour de la piscine dans une seule application domotique ou sur un écran tactile</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            {/* Residential Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden hover:shadow-xl hover:shadow-gray-200/70 transition-all duration-300 p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center flex-shrink-0">
+                  <Waves className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl">En résidentiel pour intégrer les systèmes</h3>
+                  <p className="text-sm text-gray-500">Filtration, pompe, chauffage, éclairage, qualité de l'eau</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-cyan-500/20 transition-colors">
+                    <Check className="w-4 h-4 text-cyan-600" />
+                  </div>
+                  <span>Autour de la piscine dans une seule application domotique ou sur un écran tactile</span>
+                </li>
+              </ul>
+            </motion.div>
 
-              <AccordionItem value="commercial" className="border rounded-lg px-6 bg-white/80 backdrop-blur-sm">
-                <AccordionTrigger className="text-xl hover:no-underline">
-                  Particulièrement pour l'hôtellerie et tout espace de bien-être
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ul className="space-y-2 text-gray-600 mt-4">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
-                      <span>Pour intégrer les équipements autour de la piscine dans la GTB (gestion technique du bâtiment), afin de centraliser les informations et surveiller les équipements et la qualité de l'eau</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            {/* Commercial Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden hover:shadow-xl hover:shadow-gray-200/70 transition-all duration-300 p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl">Particulièrement pour l'hôtellerie</h3>
+                  <p className="text-sm text-gray-500">Et tout espace de bien-être</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-cyan-500/20 transition-colors">
+                    <Check className="w-4 h-4 text-cyan-600" />
+                  </div>
+                  <span>Pour intégrer les équipements autour de la piscine dans la GTB (gestion technique du bâtiment), afin de centraliser les informations et surveiller les équipements et la qualité de l'eau</span>
+                </li>
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -624,7 +669,7 @@ export function PoolnxPage() {
               <ImageWithFallback
                 src={poolnxProduct}
                 alt="Pool'nX"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
             <h2 className="text-4xl mb-8">Prêt à connecter votre piscine ?</h2>

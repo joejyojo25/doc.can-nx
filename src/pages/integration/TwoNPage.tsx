@@ -5,6 +5,7 @@ import { Card } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Breadcrumb } from '../../components/Breadcrumb';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
+import { BrandLogo } from '../../components/BrandLogo';
 import {
   Accordion,
   AccordionContent,
@@ -38,34 +39,40 @@ export function TwoNPage() {
 
   const twoNProducts = [
     {
-      name: '2N IP Style',
-      description: 'Intercom design modulaire HD',
-      category: 'Intercom'
-    },
-    {
-      name: '2N IP Verso',
-      description: 'Portier robuste anti-vandalisme',
-      category: 'Intercom'
-    },
-    {
-      name: '2N Indoor Touch',
-      description: 'Écran tactile intérieur 7"',
-      category: 'Moniteur'
-    },
-    {
-      name: '2N Access Unit',
-      description: 'Lecteur RFID et contrôle accès',
-      category: 'Accès'
+      name: '2N IP Base',
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
     },
     {
       name: '2N IP Force',
-      description: 'Intercom industriel renforcé',
-      category: 'Industriel'
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
     },
     {
-      name: '2N Helios IP',
-      description: 'Portier classique IP',
-      category: 'Intercom'
+      name: '2N IP One',
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
+    },
+    {
+      name: '2N IP Solo',
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
+    },
+    {
+      name: '2N IP Style',
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
+    },
+    {
+      name: '2N IP Verso / IP Verso 2.0',
+      description: 'FW version 2.43 et supérieure',
+      category: 'Compatible',
+      compatible: true
     }
   ];
 
@@ -182,10 +189,13 @@ export function TwoNPage() {
                 Retour aux intégrations
               </a>
 
-              <Badge className="mb-4 bg-blue-600">
-                <Video className="w-4 h-4 mr-2" />
-                Intercom Vidéo
-              </Badge>
+              <div className="flex items-center gap-4 mb-4">
+                <BrandLogo brandId="2n" size="lg" />
+                <Badge className="bg-blue-600">
+                  <Video className="w-4 h-4 mr-2" />
+                  Intercom Vidéo
+                </Badge>
+              </div>
 
               <h1 className="text-4xl lg:text-5xl xl:text-6xl mb-6">
                 Intégration 2N
@@ -304,11 +314,15 @@ export function TwoNPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
+            <Badge className="mb-4 bg-green-600">
+              <Check className="w-4 h-4 mr-2" />
+              Compatibilité Certifiée
+            </Badge>
             <h2 className="text-3xl lg:text-4xl mb-4">
-              Produits 2N Compatibles
+              Intercoms 2N IP Compatibles
             </h2>
-            <p className="text-lg text-gray-600">
-              Toute la gamme 2N IP s'intègre avec Kloud'nX
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Tous les intercoms 2N IP avec <strong>firmware version 2.43 et supérieure</strong>
             </p>
           </motion.div>
 
@@ -321,16 +335,44 @@ export function TwoNPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="p-4 hover:shadow-lg transition-shadow h-full">
-                  <Badge variant="outline" className="mb-3 text-xs">
-                    {product.category}
-                  </Badge>
+                <Card className="p-5 hover:shadow-lg transition-shadow h-full border-green-200 bg-gradient-to-br from-white to-green-50/30">
+                  <div className="flex items-start justify-between mb-3">
+                    <Badge variant="outline" className="text-xs border-green-600 text-green-700">
+                      {product.category}
+                    </Badge>
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  </div>
                   <h3 className="text-base mb-2">{product.name}</h3>
                   <p className="text-sm text-gray-600">{product.description}</p>
                 </Card>
               </motion.div>
             ))}
           </div>
+
+          {/* Firmware Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 max-w-3xl mx-auto"
+          >
+            <Card className="p-6 bg-blue-50 border-blue-200">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Prérequis Firmware</h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Assurez-vous que votre intercom 2N dispose du <strong>firmware version 2.43 ou supérieure</strong>. 
+                    La mise à jour du firmware peut être effectuée gratuitement via l'interface web de l'appareil 
+                    (section Maintenance › Firmware). Cette version garantit la compatibilité complète avec l'API HTTP 
+                    nécessaire pour l'intégration avec Kloud'nX.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </section>
 

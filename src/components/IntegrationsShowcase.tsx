@@ -1,28 +1,29 @@
 import { motion } from 'motion/react';
 import { Zap, Wifi, Radio, Lock, Camera, Wind, Plug, Car, Video, Network, Droplets, Waves, Home, Speaker, Bell, Server, MessageSquare } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { BrandLogo } from './BrandLogo';
 import { Button } from './ui/button';
 import logo from 'figma:asset/919ef30138c882ec49118640f7395b4d213df19e.png';
 
 const integrations = [
-  { name: '2N', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
-  { name: 'Airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
-  { name: 'Crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
-  { name: 'DoorBird', icon: Camera, color: 'from-red-500 to-red-600', description: 'Interphones IP', link: '#integration-doorbird' },
-  { name: 'EvlinkPro', icon: Zap, color: 'from-indigo-500 to-indigo-600', description: 'Stations de charge', link: '#integration-evlinkpro' },
-  { name: 'Gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
-  { name: 'Hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
-  { name: 'HomeKit', icon: Home, color: 'from-gray-600 to-gray-700', description: 'Écosystème Apple', link: '#integration-homekit' },
-  { name: 'Klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
-  { name: 'KNX', icon: Network, color: 'from-[#0CB14B] to-[#0a9d3f]', description: 'Standard bus domotique', link: '#integration-knx' },
-  { name: 'Lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
-  { name: 'Modbus', icon: Server, color: 'from-yellow-600 to-yellow-700', description: 'Protocole industriel', link: '#integration-modbus' },
-  { name: 'Nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
-  { name: 'PoolCop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
-  { name: 'Pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
-  { name: 'Shelly', icon: Zap, color: 'from-blue-500 to-blue-600', description: 'Modules IoT WiFi', link: '#integration-shelly' },
-  { name: 'Sonos', icon: Speaker, color: 'from-gray-800 to-gray-900', description: 'Audio multi-room', link: '#integration-sonos' },
-  { name: 'TerraAC', icon: Car, color: 'from-teal-500 to-teal-600', description: 'Charge véhicules', link: '#integration-terraac' },
+  { name: '2N', brandId: '2n', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
+  { name: 'Airzone', brandId: 'airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
+  { name: 'Crestron', brandId: 'crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
+  { name: 'DoorBird', brandId: 'doorbird', icon: Camera, color: 'from-red-500 to-red-600', description: 'Interphones IP', link: '#integration-doorbird' },
+  { name: 'EvlinkPro', brandId: 'evlink-pro', icon: Zap, color: 'from-indigo-500 to-indigo-600', description: 'Stations de charge', link: '#integration-evlinkpro' },
+  { name: 'Gude', brandId: 'gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
+  { name: 'Hikvision', brandId: 'hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
+  { name: 'HomeKit', brandId: 'homekit', icon: Home, color: 'from-gray-600 to-gray-700', description: 'Écosystème Apple', link: '#integration-homekit' },
+  { name: 'Klereo', brandId: 'klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
+  { name: 'KNX', brandId: 'knx', icon: Network, color: 'from-[#0CB14B] to-[#0a9d3f]', description: 'Standard bus domotique', link: '#integration-knx' },
+  { name: 'Lektrico', brandId: 'lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
+  { name: 'Modbus', brandId: 'modbus', icon: Server, color: 'from-yellow-600 to-yellow-700', description: 'Protocole industriel', link: '#integration-modbus' },
+  { name: 'Nuki', brandId: 'nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
+  { name: 'PoolCop', brandId: 'poolcop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
+  { name: 'Pushover', brandId: 'pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
+  { name: 'Shelly', brandId: 'shelly', icon: Zap, color: 'from-blue-500 to-blue-600', description: 'Modules IoT WiFi', link: '#integration-shelly' },
+  { name: 'Sonos', brandId: 'sonos', icon: Speaker, color: 'from-gray-800 to-gray-900', description: 'Audio multi-room', link: '#integration-sonos' },
+  { name: 'TerraAC', brandId: 'abb-terraac', icon: Car, color: 'from-teal-500 to-teal-600', description: 'Charge véhicules', link: '#integration-terraac' },
 ];
 
 export function IntegrationsShowcase() {
@@ -53,16 +54,16 @@ export function IntegrationsShowcase() {
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Connectez n'importe quel système ou équipement. Can'nX intègre de manière 
-            transparente KNX, Modbus, IoT et 18 marques leaders pour créer un 
+            transparente KNX, Modbus, IoT et 50+ marques leaders pour créer un 
             écosystème de bâtiment intelligent unifié.
           </p>
 
           {/* Quick stats */}
           <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
-              { number: '18', label: 'Intégrations' },
-              { number: '6', label: 'Produits' },
-              { number: '100%', label: 'KNX Certifié' },
+              { number: '50+', label: 'Intégrations' },
+              { number: '500+', label: 'Produits' },
+              { number: '100%', label: 'Testé' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -99,10 +100,21 @@ export function IntegrationsShowcase() {
                 {/* Gradient Background on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${integration.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 
-                {/* Icon */}
-                <div className={`relative mb-4 w-12 h-12 rounded-xl bg-gradient-to-br ${integration.color} p-2.5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-full h-full text-white" />
-                </div>
+                {/* Logo or Icon */}
+                {integration.brandId ? (
+                  <div className="relative mb-4 flex items-center justify-center h-12">
+                    <BrandLogo 
+                      brandId={integration.brandId}
+                      size="md"
+                      showBackground={false}
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className={`relative mb-4 w-12 h-12 rounded-xl bg-gradient-to-br ${integration.color} p-2.5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-full h-full text-white" />
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="relative">

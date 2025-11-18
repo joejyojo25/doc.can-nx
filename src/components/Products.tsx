@@ -2,11 +2,12 @@ import { motion } from 'motion/react';
 import { Cloud, Droplets, Radio, Volume2, Boxes, Zap, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Button } from './ui/button';
-import kloudnxProductImage from 'figma:asset/b1a83fc3c8a20ae4448c96116d5ab85ce70f55e4.png';
+import kloudnxProductImage from 'figma:asset/f4e7e08a8f77640a41e6d024869598c4050d7f0d.png';
 import poolnxProductImage from 'figma:asset/6b039210627c783e16b5de6f2c223b0fa9c5ae6c.png';
 import speaknxProductImage from 'figma:asset/5745f25880afe1bc24c217e68bbc5b290ffbbe5f.png';
 import modnxProductImage from 'figma:asset/18b368059fa728d4fc03cce97562509be61e621e.png';
 import emergynxProductImage from 'figma:asset/dca0fdeb28cc7c96bb88e49f32acb378db2249c0.png';
+import infiniKnxProductImage from 'figma:asset/6710d8b072ed209d48084fa9c9d51566122aedd8.png';
 
 const products = [
   {
@@ -41,7 +42,7 @@ const products = [
     name: 'Infini KNX',
     icon: Radio,
     description: 'Le bouton rotatif KNX - 4 Boutons poussoirs rotatifs, 4 Entrées ou sorties LED',
-    image: 'figma:asset/6710d8b072ed209d48084fa9c9d51566122aedd8.png',
+    image: infiniKnxProductImage,
     color: 'from-purple-500 to-pink-600',
     link: '#infinix',
   },

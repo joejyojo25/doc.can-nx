@@ -161,7 +161,7 @@ export function ModnxPage() {
               <ImageWithFallback
                 src={modnxProduct}
                 alt="Mod'nX - Module KNX compact"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
           </motion.div>

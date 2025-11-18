@@ -6,6 +6,7 @@ import { Badge } from '../../components/ui/badge';
 import { Separator } from '../../components/ui/separator';
 import { Breadcrumb } from '../../components/Breadcrumb';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
+import { BrandLogo } from '../../components/BrandLogo';
 import {
   Accordion,
   AccordionContent,
@@ -167,6 +168,10 @@ export function KNXPage() {
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Retour aux intégrations
               </a>
+
+              <div className="mb-6">
+                <BrandLogo brandId="knx" size="lg" />
+              </div>
 
               <Badge className="mb-4 bg-green-600">
                 <Network className="w-4 h-4 mr-2" />

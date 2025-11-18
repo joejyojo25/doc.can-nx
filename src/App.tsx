@@ -21,10 +21,11 @@ import { BossnxPage } from './pages/BossnxPage';
 import { PoolnxPage } from './pages/PoolnxPage';
 import { EmergynxPage } from './pages/EmergynxPage';
 import { InfiniKnxPage } from './pages/InfiniKnxPage';
-import { InfiniKnxConfiguratorPage } from './pages/InfiniKnxConfiguratorPage';
+import { InfiniKnxConfiguratorPageWrapper } from './pages/InfiniKnxConfiguratorPageWrapper';
 import { ModnxPage } from './pages/ModnxPage';
 import { SpeaknxPage } from './pages/SpeaknxPage';
 import { BlogPage } from './pages/BlogPage';
+import { ContactPage } from './pages/ContactPage';
 import { ImprovementsDemo } from './components/ImprovementsDemo';
 import { TwoNPage } from './pages/integration/TwoNPage';
 import { DoorbirdPage } from './pages/integration/DoorbirdPage';
@@ -197,7 +198,7 @@ export default function App() {
         <SEOHead {...getSEOConfig('infinix')} />
         <Header />
         <main>
-          <InfiniKnxConfiguratorPage />
+          <InfiniKnxConfiguratorPageWrapper />
         </main>
         <Footer />
       </div>
@@ -499,6 +500,18 @@ export default function App() {
         <Header />
         <main>
           <BlogPage />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'contact') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>
+          <ContactPage />
         </main>
         <Footer />
       </div>

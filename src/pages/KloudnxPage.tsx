@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Plug, Lock, Cloud, Check, ArrowRight, Share2, ShoppingCart, FileText, Zap, Users, Globe, Award, TrendingUp } from 'lucide-react';
+import { Plug, Lock, Cloud, Check, ArrowRight, Share2, ShoppingCart, FileText, Zap, Users, Globe, Award, TrendingUp, Camera, Wind, Home, Video, Waves, Network, Droplets, MessageSquare, Bell, Speaker } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { BrandLogo } from '../components/BrandLogo';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
@@ -81,18 +82,20 @@ const technicalSpecs = [
   { icon: Check, label: 'Garantie', value: '2 ans' },
 ];
 
-const partners = [
-  { name: '2N', logo: 'https://can-nx.com/wp-content/uploads/2025/09/2N-logo.png' },
-  { name: 'Crestron', logo: 'https://can-nx.com/wp-content/uploads/2023/04/Crestron_logo_PNG3-e1682506031893-1024x143.png' },
-  { name: 'Hikvision', logo: 'https://can-nx.com/wp-content/uploads/2023/04/Hikvision_logo.svg' },
-  { name: 'Klereo', logo: 'https://can-nx.com/wp-content/uploads/2021/11/Klereo-Piscine-connectee-1024x236.png' },
-  { name: 'PoolCop', logo: 'https://can-nx.com/wp-content/uploads/2021/11/Logo-PoolCop.png' },
-  { name: 'Nuki', logo: 'https://can-nx.com/wp-content/uploads/2025/06/nuki-logo-1.png' },
-  { name: 'Sonos', logo: 'https://can-nx.com/wp-content/uploads/2021/11/sonos-logo-1024x196.png' },
-  { name: 'Shelly', logo: 'https://can-nx.com/wp-content/uploads/2023/04/logo-shelly-de-website-3_2-1044x696-2-1024x683.png' },
-  { name: 'Gude', logo: 'https://can-nx.com/wp-content/uploads/2025/06/gude_488px-removebg-preview-1.png' },
-  { name: 'Airzone', logo: 'https://can-nx.com/wp-content/uploads/2025/06/airzone-1.png' },
-  { name: 'Lektri.co', logo: 'https://can-nx.com/wp-content/uploads/2024/10/logo-lektri-co-2020-g-1024x273.png' },
+const integrations = [
+  { name: '2N', brandId: '2n', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
+  { name: 'Airzone', brandId: 'airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
+  { name: 'Crestron', brandId: 'crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
+  { name: 'Gude', brandId: 'gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
+  { name: 'Hikvision', brandId: 'hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
+  { name: 'Klereo', brandId: 'klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
+  { name: 'KNX', brandId: 'knx', icon: Network, color: 'from-[#0CB14B] to-[#0a9d3f]', description: 'Standard bus domotique', link: '#integration-knx' },
+  { name: 'Lektrico', brandId: 'lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
+  { name: 'Nuki', brandId: 'nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
+  { name: 'PoolCop', brandId: 'poolcop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
+  { name: 'Pushover', brandId: 'pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
+  { name: 'Shelly', brandId: 'shelly', icon: Zap, color: 'from-blue-500 to-blue-600', description: 'Modules IoT WiFi', link: '#integration-shelly' },
+  { name: 'Sonos', brandId: 'sonos', icon: Speaker, color: 'from-gray-800 to-gray-900', description: 'Audio multi-room', link: '#integration-sonos' },
 ];
 
 const pricingPlans = [
@@ -208,7 +211,7 @@ export function KloudnxPage() {
               <ImageWithFallback
                 src={kloudnxAngle}
                 alt="Kloud'nX - Routeur KNX IoT"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
           </motion.div>
@@ -437,74 +440,124 @@ export function KloudnxPage() {
             transition={{ delay: 0.2 }}
           >
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <ImageWithFallback
-                src="https://can-nx.com/wp-content/uploads/2021/11/Schema-KloudnX-1024x376.png"
-                alt="Schema pour Kloud'nX"
-                className="w-full h-auto"
-              />
+              <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                <span className="text-gray-400 text-2xl">À faire</span>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Applications */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#0CB14B]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl mb-6">Domaine d'application - Recommandation</h2>
+            <motion.div
+              className="inline-block px-4 py-2 bg-[#0CB14B]/10 rounded-full mb-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <span className="text-[#0CB14B]">Applications recommandées</span>
+            </motion.div>
+            <h2 className="text-4xl sm:text-5xl mb-4">Domaine d'application</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Découvrez les cas d'usage optimaux pour exploiter pleinement les capacités de Kloud'nX
+            </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="residential" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-xl">
-                  En résidentiel pour intégrer les systèmes
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>Centralisation des données KNX pour script ou fonction avancée</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>Monitorer et accéder aux installations KNX à distance</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>Discuter avec des équipements IP et interagir sur KNX</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>
-                        Récupérer des informations / commandes qui nécessite une authentification sécurisée sur Crestron
-                      </span>
-                    </li>
-  </ul>
-                </AccordionContent>
-              </AccordionItem>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            {/* Residential Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden hover:shadow-xl hover:shadow-gray-200/70 transition-all duration-300 p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0CB14B] to-[#0CB14B]/70 flex items-center justify-center flex-shrink-0">
+                  <Home className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl">En résidentiel pour intégrer les systèmes</h3>
+                  <p className="text-sm text-gray-500">Solutions pour maisons intelligentes</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>Centralisation des données KNX pour script ou fonction avancée</span>
+                </li>
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>Monitorer et accéder aux installations KNX à distance</span>
+                </li>
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>Discuter avec des équipements IP et interagir sur KNX</span>
+                </li>
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>
+                    Récupérer des informations / commandes qui nécessite une authentification sécurisée sur Crestron
+                  </span>
+                </li>
+              </ul>
+            </motion.div>
 
-              <AccordionItem value="commercial" className="border rounded-lg px-6">
-                <AccordionTrigger className="text-xl">En tertiaire particulièrement pour</AccordionTrigger>
-                <AccordionContent>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>Déployer une architecture GTB en IP dans le bâtiment</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#0CB14B] mt-0.5 flex-shrink-0" />
-                      <span>Interagir entre les différents équipements du bâtiment</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            {/* Commercial Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden hover:shadow-xl hover:shadow-gray-200/70 transition-all duration-300 p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl">En tertiaire particulièrement pour</h3>
+                  <p className="text-sm text-gray-500">Solutions pour bâtiments professionnels</p>
+                </div>
+              </div>
+              
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>Déployer une architecture GTB en IP dans le bâtiment</span>
+                </li>
+                <li className="flex items-start gap-3 group/item">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B]/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#0CB14B]/20 transition-colors">
+                    <Check className="w-4 h-4 text-[#0CB14B]" />
+                  </div>
+                  <span>Interagir entre les différents équipements du bâtiment</span>
+                </li>
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -543,36 +596,82 @@ export function KloudnxPage() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Integrations - Bento Box Grid */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0CB14B] rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#cd2653] rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl mb-6">Produit connecté avec</h2>
+            <h2 className="text-4xl sm:text-5xl mb-4">Produit connecté avec</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Kloud'nX intègre de manière transparente les principales marques et protocoles pour créer un écosystème unifié
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                className="flex items-center justify-center p-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <ImageWithFallback
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-w-full h-auto max-h-16 object-contain grayscale hover:grayscale-0 transition-all"
-                />
-              </motion.div>
-            ))}
+          {/* Bento Box Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            {integrations.map((integration, index) => {
+              const Icon = integration.icon;
+              return (
+                <motion.a
+                  key={integration.name}
+                  href={integration.link}
+                  className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0CB14B] overflow-hidden"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
+                  {/* Gradient Background on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${integration.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                  
+                  {/* Logo or Icon */}
+                  {integration.brandId ? (
+                    <div className="relative mb-4 flex items-center justify-center h-12">
+                      <BrandLogo 
+                        brandId={integration.brandId}
+                        size="md"
+                        showBackground={false}
+                        className="group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`relative mb-4 w-12 h-12 rounded-xl bg-gradient-to-br ${integration.color} p-2.5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-full h-full text-white" />
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className="relative">
+                    <h3 className="text-lg mb-2 text-gray-900 group-hover:text-[#0CB14B] transition-colors">
+                      {integration.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {integration.description}
+                    </p>
+                  </div>
+
+                  {/* Hover Arrow */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-6 h-6 rounded-full bg-[#0CB14B] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -780,7 +879,7 @@ export function KloudnxPage() {
               <ImageWithFallback
                 src={kloudnxAngle}
                 alt="Kloud'nX"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
               />
             </div>
 

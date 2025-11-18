@@ -368,6 +368,21 @@ export const seoConfig: Record<string, SEOProps> = {
     ogType: 'website',
     keywords: ['blog KNX', 'actualités domotique', 'guides KNX', 'tutoriels building automation'],
   },
+
+  contact: {
+    title: "Contact Can-nX | Solutions KNX & IoT Pro",
+    description: "Contactez Can-nX pour vos projets KNX et IoT. Support technique, devis personnalisés et conseils d'experts pour professionnels du bâtiment.",
+    canonical: `${SITE_URL}/#contact`,
+    ogType: 'website',
+    keywords: ['contact Can-nX', 'support KNX', 'devis automatisation bâtiment', 'conseil IoT', 'intégration KNX', 'support technique', 'projet domotique'],
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact Can-nX',
+      description: 'Page de contact pour Can-nX, fabricant de solutions KNX et IoT',
+      mainEntity: organizationSchema,
+    },
+  },
 };
 
 // Helper function to get SEO config by page ID

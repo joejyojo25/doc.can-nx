@@ -1,232 +1,205 @@
-# Can-nX Website - Quick Links Reference
+# Can-nX Website - Quick Links & Navigation Guide
 
-## Product Pages
+## 📚 Quick Reference
 
-Navigate to product pages using these hash links:
+### Main Pages
+- **Home** : `#home` ou `/`
+- **Contact** : `#contact` - 🆕 Nouvelle page contact dédiée
+- **Blog** : `#blog`
 
-- **Kloud'nX** - `#kloudnx` - KNX-IoT Cloud Router
-- **Pool'nX** - `#poolnx` - Pool Automation Gateway
-- **Emergy'nX** - `#emergynx` - Energy Optimization
-- **Infini KNX** - `#infinix` - Rotary Control Button
-- **Mod'nX** - `#modnx` - Compact Input Module
-- **Speak'nX** - `#speaknx` - Audio Diffuser
+### Products
+- **Kloud'nX** : `#kloudnx`
+- **Pool'nX** : `#poolnx`
+- **Emergy'nX** : `#emergynx`
+- **Infini KNX** : `#infinix`
+  - Configurator : `#infinix-configurator`
+- **Speak'nX** : `#speaknx`
+- **Mod'nX** : `#modnx`
 
-## Integration Pages
+### Services & Licenses
+- **Kloud'nX Subscriptions** : `#kloudnx-subscription`
+- **Chart'nX** : `#chartnx`
+- **Boss'nX** : `#bossnx`
 
-Navigate to brand integration pages using these hash links:
+### Brand Integrations (18 total)
 
-- **2N** - `#integration-2n` - Intercom & Access Control
-- **DoorBird** - `#integration-doorbird` - Video Intercom
-- **PoolCop/Klereo** - `#integration-poolcop` - Pool Regulation
-- **Modbus** - `#integration-modbus` - Industrial Protocol (TCP/RTU)
-- **Sonos** - `#integration-sonos` - Multiroom Audio
+#### Contrôle d'accès & Sécurité
+- **2N** : `#integration-2n`
+- **DoorBird** : `#integration-doorbird`
+- **Hikvision** : `#integration-hikvision`
+- **Nuki** : `#integration-nuki`
 
-## Special Pages
+#### Climatisation
+- **Airzone** : `#integration-airzone` (includes Aidoo)
 
-- **Blog** - `#blog` - News & Achievements
-- **Improvements Demo** - `#improvements` - Website Enhancement Showcase
+#### Gestion de Piscine
+- **PoolCop** : `#integration-poolcop`
+- **Klereo** : `#integration-klereo`
 
-## How to Link
+#### Audio & Multimédia
+- **Crestron** : `#integration-crestron`
+- **Sonos** : `#integration-sonos`
 
-### From HTML/JSX:
-```html
-<a href="#kloudnx">Kloud'nX Product Page</a>
-<a href="#integration-2n">2N Integration</a>
+#### Bornes de Recharge VE
+- **ABB Terra AC** : `#integration-terraac`
+- **Evlink Pro** : `#integration-evlinkpro`
+- **Lektrico** : `#integration-lektrico`
+
+#### IoT & Protocoles
+- **KNX** : `#integration-knx`
+- **HomeKit** : `#integration-homekit`
+- **Pushover** : `#integration-pushover`
+- **Shelly** : `#integration-shelly`
+- **Modbus** : `#integration-modbus`
+- **Gude** : `#integration-gude`
+
+## 🔗 External Links
+
+### Shopping & E-commerce
+- **Can-nX Shop** : https://can-nx.shop
+
+### Cloud & Platform
+- **Can-nX Cloud** : https://can-nx.cloud/welcome
+
+### Documentation & Support
+- **Documentation** : https://doc.can-nx.com
+- **YouTube Channel** : https://www.youtube.com/@cannx7140/videos
+
+### Contact
+- **Email** : contact@can-nx.com
+- **Phone** : +33 6 49 53 67 19
+
+## 📁 Important File Locations
+
+### Components
+- Header : `/components/Header.tsx`
+- Footer : `/components/Footer.tsx`
+- Contact Form : `/components/Contact.tsx`
+- Products Grid : `/components/Products.tsx`
+- Brand Logo System : `/components/BrandLogo.tsx`
+
+### Pages
+- Home : `/App.tsx` (default return)
+- Contact Page : `/pages/ContactPage.tsx` 🆕
+- Product Pages : `/pages/[ProductName]Page.tsx`
+- Integration Pages : `/pages/integration/[BrandName]Page.tsx`
+
+### Configuration
+- SEO Config : `/config/seoConfig.ts`
+- Mailchimp Config : `/config/mailchimpConfig.ts`
+
+### Documentation
+- Main Guidelines : `/guidelines/Guidelines.md`
+- SEO Implementation : `/guidelines/SEO-Implementation.md`
+- Contact Form Update : `/guidelines/ContactFormUpdate.md` 🆕
+- Mailchimp Integration : `/guidelines/MailchimpIntegration.md`
+- Brand Integrations : `/guidelines/AllBrandIntegrations.md`
+
+### Public Files
+- Sitemap : `/public/sitemap.xml`
+- Robots : `/public/robots.txt`
+
+## 🎨 Design System
+
+### Colors
+- **Primary Green** : `#0CB14B`
+- **Secondary Pink** : `#cd2653`
+- **Gradients** : 
+  - CTA Button : `from-[#0CB14B] to-[#0CB14B]/90`
+  - Hover : `from-[#0CB14B]/90 to-[#0CB14B]`
+  - Shadow : `shadow-lg shadow-[#0CB14B]/30`
+
+### Typography
+- Headers use default typography from `/styles/globals.css`
+- No font size/weight classes unless specifically requested
+
+### Responsive Breakpoints
+- `sm:` - 640px
+- `md:` - 768px
+- `lg:` - 1024px
+- `xl:` - 1280px
+
+## 🚀 Development Commands
+
+### Local Development
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-### From Menu/Navigation:
-```tsx
-<Link href="#integration-doorbird">DoorBird Integration</Link>
+### Build
+```bash
+npm run build
+# or
+yarn build
 ```
 
-### Programmatic Navigation:
-```javascript
-window.location.hash = 'integration-sonos';
+### Deploy (if using Vercel/Netlify)
+```bash
+git push origin main
 ```
 
-## Menu Structure Suggestion
+## 📊 Statistics & Numbers
 
-### Main Navigation:
-```
-- Accueil (/)
-- Produits
-  ├─ Kloud'nX (#kloudnx)
-  ├─ Pool'nX (#poolnx)
-  ├─ Emergy'nX (#emergynx)
-  ├─ Infini KNX (#infinix)
-  ├─ Mod'nX (#modnx)
-  └─ Speak'nX (#speaknx)
-- Intégrations
-  ├─ 2N (#integration-2n)
-  ├─ DoorBird (#integration-doorbird)
-  ├─ PoolCop/Klereo (#integration-poolcop)
-  ├─ Modbus (#integration-modbus)
-  └─ Sonos (#integration-sonos)
-- Cloud (https://can-nx.cloud)
-- Support
-  ├─ Blog (#blog)
-  ├─ Documentation (https://doc.can-nx.com)
-  └─ Guide vidéo (YouTube)
-- Boutique (https://can-nx.shop)
-- Contact (#contact)
-```
+### Current Ecosystem
+- **50+** marques partenaires
+- **500+** produits compatibles
+- **100%** testé
 
-## Footer Links Suggestion
+### Products
+- **6** produits Can-nX
+- **18** intégrations partenaires
+- **2** licences logicielles (Chart'nX, Boss'nX)
 
-### Products Column:
-- Kloud'nX
-- Pool'nX
-- Emergy'nX
-- Infini KNX
-- Mod'nX
-- Speak'nX
+## 🔄 Recent Updates (Nov 2025)
 
-### Integrations Column:
-- 2N
-- DoorBird
-- PoolCop/Klereo
-- Modbus
-- Sonos
-- [Voir toutes les intégrations]
+### ✅ Completed
+- [x] Contact form extended to 10 fields
+- [x] Contact page created (`/pages/ContactPage.tsx`)
+- [x] Mailchimp integration implemented
+- [x] SEO for contact page
+- [x] Sitemap updated
+- [x] All 18 brand logos integrated
+- [x] Statistics updated (50+ brands)
+- [x] Infini KNX configurator (Legrand support)
 
-### Support Column:
-- Blog
-- Documentation
-- Vidéos YouTube
-- FAQ
-- Contact
+### 🔄 In Progress
+- [ ] Mailchimp API configuration
+- [ ] Supabase Edge Function deployment
+- [ ] Multi-language support (FR/EN/DE)
 
-### Company Column:
-- À propos
-- Blog/Actualités
-- Mentions légales
-- CGV
+### 📝 Planned
+- [ ] Blog content creation
+- [ ] Customer testimonials
+- [ ] Case studies
+- [ ] Video tutorials
+- [ ] Live chat integration
 
-## Call-to-Action Examples
+## 🆘 Troubleshooting
 
-### Product Pages:
-```tsx
-<Button href="https://can-nx.shop">Acheter maintenant</Button>
-<Button href="https://doc.can-nx.com">Documentation</Button>
-```
+### Common Issues
 
-### Integration Pages:
-```tsx
-<Button href="https://can-nx.shop">Acheter licence Link'nX</Button>
-<Button href="https://doc.can-nx.com">Guide d'intégration</Button>
-```
+**Issue** : Contact form doesn't submit
+- **Solution** : Check Mailchimp API credentials in `/components/Contact.tsx`
 
-## Search/Filter Functionality
+**Issue** : Images not loading
+- **Solution** : Verify Figma asset imports or use `ImageWithFallback`
 
-If implementing search, these keywords should find relevant pages:
+**Issue** : SEO not working
+- **Solution** : Check `/config/seoConfig.ts` and verify page ID
 
-### Product Keywords:
-- "routeur knx" → Kloud'nX
-- "piscine" → Pool'nX
-- "énergie solaire" → Emergy'nX
-- "bouton rotatif" → Infini KNX
-- "module entrées" → Mod'nX
-- "sonnette" → Speak'nX
+**Issue** : Navigation not working
+- **Solution** : Verify hash routing in `/App.tsx`
 
-### Integration Keywords:
-- "portier vidéo" → DoorBird, 2N
-- "interphone" → 2N, DoorBird
-- "piscine poolcop" → PoolCop integration
-- "modbus tcp" → Modbus integration
-- "sonos knx" → Sonos integration
-- "compteur énergie" → Modbus integration
+## 📞 Need Help?
 
-## Related Pages Matrix
+- Check `/guidelines/` folder for detailed documentation
+- Review component code in `/components/`
+- Check configuration in `/config/`
+- Contact: contact@can-nx.com
 
-### Kloud'nX is related to:
-- All integrations (central hub)
-- Emergy'nX (energy management)
-- All products (can connect to all)
+---
 
-### Pool'nX is related to:
-- PoolCop/Klereo integration
-- Emergy'nX (pool energy optimization)
-
-### Speak'nX is related to:
-- 2N integration (doorbell sounds)
-- DoorBird integration (doorbell sounds)
-- Sonos integration (audio notifications)
-
-### Emergy'nX is related to:
-- Kloud'nX (data collection)
-- Modbus integration (energy meters)
-- Pool'nX (pool energy optimization)
-
-### Infini KNX is related to:
-- Sonos integration (audio control)
-- All products (KNX control)
-
-### Mod'nX is related to:
-- 2N integration (alarm inputs)
-- DoorBird integration (REX buttons)
-
-## Breadcrumb Paths
-
-### Products:
-```
-Accueil > Produits > [Product Name]
-```
-
-### Integrations:
-```
-Accueil > Intégrations > [Brand Name]
-```
-
-### With Context:
-```
-Accueil > Produits > Kloud'nX > Intégrations > 2N
-```
-
-## Cross-Promotion Strategy
-
-### On Kloud'nX Page, Show:
-- "Découvrez nos intégrations" → Integration pages
-- "Produits complémentaires" → Mod'nX, Speak'nX, Infini KNX
-
-### On Integration Pages, Show:
-- "Produits compatibles" → Related Can-nX products
-- "Autres intégrations" → Other brand integrations
-
-### On Pool'nX Page, Show:
-- "Intégration PoolCop" → Direct link
-- "Optimisation énergie" → Emergy'nX
-
-## Analytics Tracking Suggestion
-
-Track these key pages:
-- `/` (home)
-- `#kloudnx`, `#poolnx`, `#emergynx`, etc. (products)
-- `#integration-*` (all integrations)
-- `#blog` (blog/news)
-- `#contact` (contact form)
-- External: shop, documentation, cloud
-
-Track conversions:
-- Product page → Shop clicks
-- Integration page → Documentation clicks
-- Integration page → Shop clicks (license purchase)
-- Contact form submissions
-
-## Mobile Menu Optimization
-
-### Priority Order (Top to Bottom):
-1. Produits (expandable)
-2. Intégrations (expandable)
-3. Boutique
-4. Documentation
-5. Cloud
-6. Contact
-
-### Collapsed by Default:
-- Produits submenu
-- Intégrations submenu
-
-### Always Visible:
-- Shop button/link
-- Contact
-- Language selector
+**Last Updated** : November 7, 2025
+**Version** : 2.0.0
