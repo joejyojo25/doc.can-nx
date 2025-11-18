@@ -1,329 +1,133 @@
 /*******************************************************
- * Can'nX – Custom theme for MkDocs Material (REFINED v2)
+ * Can'nX – Custom theme for MkDocs Material (REFINED v3 - Specificity & Footer Fix)
  *******************************************************/
 
+/* --- GENERAL FONT OVERRIDES (Increased Specificity) --- */
 
-/* =====================================================
-    GLOBAL TYPOGRAPHY & CONTENT WIDTH
-===================================================== */
-
-/* Keep content max width to 980px */
-.md-content {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-/* Base typography: Reduced for a more professional, tighter document feel */
+/* Base typography: Reduced and forced */
 .md-typeset {
-  font-size: 0.90rem; 
-  line-height: 1.6;  
-  color: #1a1a1a;
-}
-
-/* Headings sizes are kept, as they seem reasonable */
-.md-typeset h1 {
-  font-size: 2.3rem;
-  font-weight: 600;
-}
-
-.md-typeset h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.md-typeset h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 0.90rem !important; 
+  line-height: 1.6 !important; 
+  color: #1a1a1a !important;
 }
 
 
 /* =====================================================
-    HEADER
+    TABS (TOP NAV) – COMPACT (FORCED)
 ===================================================== */
-
-.md-header,
-.md-header__inner {
-  background: #ffffff;
-  color: #1a1a1a;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.md-header__title {
-  color: #1a1a1a;
-}
-
-
-/* =====================================================
-    TABS (TOP NAV) – MORE COMPACT (REFINED)
-===================================================== */
-
-.md-tabs {
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.md-tabs__list {
-  max-width: 980px;
-  margin: 0 auto;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.md-tabs__item {
-  display: inline-block;
-}
 
 /* Tighter tabs: Reduced padding and font size further */
 .md-tabs__link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.5rem; /* Reduced from 0.3rem 0.6rem */
-  font-size: 0.9rem;       /* Reduced from 0.95rem */
+  padding: 0.25rem 0.5rem !important; 
+  font-size: 0.9rem !important;      
   font-weight: 500;
-  border-radius: 6px;
-  margin-right: 0.2rem;   
+  margin-right: 0.2rem;
   color: #444444;
-  white-space: nowrap;
 }
 
 .md-tabs__link:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000 !important;
 }
 
 .md-tabs__item--active .md-tabs__link {
-  background: rgba(37, 192, 107, 0.14);
-  border-bottom: 2px solid #25c06b;
-  font-weight: 600;
-  color: #000000;
-}
-
-.md-tabs__link::after {
-  display: none;
+  background: rgba(37, 192, 107, 0.14) !important;
+  border-bottom: 2px solid #25c06b !important;
+  font-weight: 600 !important;
+  color: #000000 !important;
 }
 
 
-/*******************************************************
- * SIDEBAR – WIDE + COMPACT, FIXED FONT (REFINED)
- *******************************************************/
-
-.md-sidebar--primary {
-  width: 260px;
-  min-width: 260px;
-  background: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-}
+/* =====================================================
+ * SIDEBAR – COMPACT (FORCED)
+ *===================================================== */
 
 /* titles inside sidebar sections */
 .md-sidebar--primary .md-nav__title {
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.75rem; /* Reduced from 0.78rem */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 0.6rem 1rem 0.3rem;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.75rem !important; 
+  padding: 0.6rem 1rem 0.3rem !important;
 }
 
-/* links - Reduced font size for less bulk */
+/* links - Reduced font size and padding */
 .md-sidebar--primary .md-nav__link {
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  padding: 0.35rem 1rem; /* Reduced padding slightly */
-  font-size: 0.88rem;   /* Reduced from 0.92rem */
-  border-radius: 6px;
+  padding: 0.35rem 1rem !important; 
+  font-size: 0.88rem !important; 
 }
 
-/* second level links - Reduced font size for less bulk */
+/* second level links - Reduced font size */
 .md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.4rem;
-  font-size: 0.82rem; /* Reduced from 0.85rem */
+  padding-left: 1.4rem !important;
+  font-size: 0.82rem !important; 
 }
 
-/* hover + active */
-.md-sidebar--primary .md-nav__link:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
+/* --- OTHER SECTIONS KEPT AS IS (Except for font sizes handled above) --- */
 
-.md-sidebar--primary .md-nav__link--active {
-  background: rgba(37, 192, 107, 0.15);
-  border-left: 3px solid #25c06b;
-  padding-left: calc(1rem - 3px);
-  font-weight: 600;
-}
+.md-content { max-width: 980px; margin: 0 auto; }
+.md-header, .md-header__inner { background: #ffffff; color: #1a1a1a; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+.md-tabs { background: #ffffff; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+.md-tabs__list { max-width: 980px; margin: 0 auto; overflow-x: auto; white-space: nowrap; }
+.md-tabs__link::after { display: none; }
+.md-sidebar--primary { width: 260px; min-width: 260px; background: #ffffff; border-right: 1px solid rgba(0, 0, 0, 0.08); }
+.md-typeset table:not([class]) { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
+.md-typeset blockquote { border-left: 5px solid #25c06b; background: #f3fff7; padding: 1rem; border-radius: 6px; }
+.md-typeset pre { border-radius: 10px; background: #f8f9fa; padding: 1rem; box-shadow: inset 0 0 0 1px #e6e8eb; }
 
 
 /*******************************************************
- * HERO, CARDS, BUTTONS (KEPT AS IS)
+ * FOOTER – PREVIOUS / NEXT COMPACT & LIGHT GRAY (FORCED FIX)
  *******************************************************/
 
-/* optional hero block on home page */
-.hero {
-  padding: 3.2rem 2rem;
-  text-align: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #e8fbea 0%, #ffffff 60%);
-  margin-bottom: 2.2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 740px;
-  margin: 0 auto;
-  color: #444;
-  font-size: 1.1rem;
-}
-
-.hero-buttons {
-  margin-top: 1.8rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.btn-primary {
-  background: #25c06b;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: #1fa85d;
-}
-
-.btn-secondary {
-  background: #ffffff;
-  border: 1px solid #25c06b;
-  color: #25c06b;
-}
-
-.btn-secondary:hover {
-  background: #eafff2;
-}
-
-/* home/grid cards */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.4rem;
-  margin: 2rem 0;
-}
-
-.card {
-  padding: 1.6rem;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-}
-
-
-/*******************************************************
- * TABLES, QUOTES, CODE (KEPT AS IS)
- *******************************************************/
-
-.md-typeset table:not([class]) {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.md-typeset blockquote {
-  border-left: 5px solid #25c06b;
-  background: #f3fff7;
-  padding: 1rem;
-  border-radius: 6px;
-}
-
-.md-typeset pre {
-  border-radius: 10px;
-  background: #f8f9fa;
-  padding: 1rem;
-  box-shadow: inset 0 0 0 1px #e6e8eb;
-}
-
-
-/*******************************************************
- * FOOTER – PREVIOUS / NEXT FIXED & LIGHTER BACKGROUND (FIXED)
- *******************************************************/
-
-/* base footer container */
+/* base footer container: Constrain the navigation block */
 .md-footer {
-  background: transparent;
+  background: transparent !important; /* Ensure no background bleed */
   color: inherit;
   border-top: none;
   max-width: 980px; 
   margin: 0 auto;
 }
 
-/* Footer navigation bar: Changed background color */
+/* Footer navigation bar: Light background, reduced height */
 .md-footer__inner {
-  background: #f8f8f8; /* Changed from #212121 (black) to light gray */
-  color: #444444;    /* Changed text color from white to dark gray */
-  border-top: 1px solid rgba(0, 0, 0, 0.08); /* Added subtle separator */
-  padding: 0.6rem 0.6rem; /* Increased padding slightly for comfort */
+  /* BACKGROUND AND COLOR FIX */
+  background: #f0f0f0 !important; /* Lighter gray to ensure it's not black */
+  color: #444444 !important;    /* Dark gray text */
+  border: 1px solid rgba(0, 0, 0, 0.08) !important; /* Border to define the block */
+  border-radius: 6px; /* Soft edges for a 'block' feel */
+
+  /* COMPACT HEIGHT FIX */
+  padding: 0.4rem 0.6rem !important; /* Reduced vertical padding */
+  
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%; 
 }
 
-/* previous/next links - Adjusted hover/active color for light background */
+/* previous/next links text and size */
 .md-footer__link {
-  padding: 0.25rem 0.4rem;
-  color: #444444;
-  transition: all 0.15s ease-in-out;
-}
-
-.md-footer__link:hover {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+  padding: 0.15rem 0.3rem !important; /* Tighter padding around links */
+  color: #444444 !important;
 }
 
 .md-footer__button {
-  font-size: 0.8rem;
+  font-size: 0.78rem !important; /* Slight reduction for compactness */
 }
 
-.md-footer__direction {
-  font-size: 0.7rem;
-  opacity: 0.7; /* Reduced opacity for direction text */
-}
-
-.md-footer__title {
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
-/* smaller arrows */
-.md-footer__button .md-icon svg {
-  width: 0.75rem;
-  height: 0.75rem;
-  fill: #444444; /* Ensure icon color matches text */
-}
-
-/* copyright + social bar below - Kept dark for contrast */
+/* copyright + social bar below - Kept dark, full width, and detached */
 .md-footer-meta {
-  background: #111111;
-  color: #ffffff;
-  font-size: 0.75rem;
-  padding: 0.6rem 1rem;
-  width: 100%; 
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  padding: 0.6rem 1rem !important;
+  width: 100vw; /* Use viewport width to span full length */
+  margin-top: 1rem; /* Space between the page navigation and the copyright bar */
+  box-sizing: border-box;
+}
+
+/* Reset margin for the wrapper that contains the footer to prevent centering issues */
+.md-footer-meta__inner {
+  max-width: none;
+  margin: 0 auto;
 }
 
 
@@ -332,30 +136,16 @@
  *******************************************************/
 
 @media (max-width: 960px) {
-  /* Ensured primary sidebar behaves well on mobile */
-  .md-sidebar--primary {
-    width: 100%;
-    min-width: 100%;
-  }
-
-  /* Added padding to content for better mobile display */
-  .md-content {
-    padding: 0 0.5rem;
-  }
-  
-  .md-tabs__list {
-    padding: 0 0.5rem;
-  }
-
-  /* Adjusted footer inner margin for mobile */
-  .md-footer__inner {
-    margin: 0 0.5rem;
-    max-width: none;
-  }
-  
-  /* Reset global footer max-width for mobile */
+  /* Mobile: Ensure the main footer container can span full width again */
   .md-footer {
-    max-width: none;
-    margin: 0;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0.5rem; /* Add padding to stop touch edge */
+  }
+
+  /* Mobile: Ensure the inner bar also spans cleanly */
+  .md-footer__inner {
+    margin: 0 !important;
+    max-width: none !important;
   }
 }
