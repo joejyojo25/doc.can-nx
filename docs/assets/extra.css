@@ -1,165 +1,134 @@
 /*******************************************************
- * Can'nX – FULL custom theme for MkDocs Material
- * Works with mkdocs-material 8/9
+ * CAN’N’X — FULL CUSTOM THEME (FIXED VERSION)
+ * Tabs (1rem, compact), Sidebar, Footer under content only
  *******************************************************/
 
 
 /* =====================================================
-   GLOBAL TYPOGRAPHY & CONTENT
+   GLOBAL TYPOGRAPHY
 ===================================================== */
-
-:root,
-body,
-.md-content,
-.md-typeset {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #1a1a1a;
-}
 
 .md-content {
   max-width: 980px;
   margin: 0 auto;
 }
 
-.md-typeset h1 {
-  font-size: 2.3rem;
-  font-weight: 600;
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #1a1a1a;
 }
 
-.md-typeset h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.md-typeset h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-}
+.md-typeset h1 { font-size: 2.3rem; font-weight: 600; }
+.md-typeset h2 { font-size: 1.8rem; font-weight: 600; }
+.md-typeset h3 { font-size: 1.35rem; font-weight: 600; }
 
 
 /* =====================================================
-   HEADER (WHITE)
+   HEADER
 ===================================================== */
 
 .md-header,
 .md-header__inner {
   background: #ffffff;
-  color: #1a1a1a;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.md-header__title {
-  color: #1a1a1a;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 
 /* =====================================================
-   TABS (MAIN NAV – 1rem FONT)
+   FIXED TABS → 1rem + COMPACT + NO SCROLL
 ===================================================== */
 
 .md-tabs {
   background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .md-tabs__list {
   max-width: 980px;
   margin: 0 auto;
+  overflow-x: auto;      /* prevents page scroll */
+  white-space: nowrap;   /* keeps items tidy */
 }
 
-/* clickable tab link */
 .md-tabs__link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.55rem 1rem;
-  font-size: 1rem;           /* requested size */
+  padding: 0.35rem 0.75rem !important;  /* compact */
+  font-size: 1rem !important;           /* your requirement */
   font-weight: 500;
+  white-space: nowrap;
   border-radius: 6px;
-  margin-right: 0.3rem;
-  color: #444444;
-}
-
-.md-tabs__link:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
+  color: #444;
 }
 
 .md-tabs__item--active .md-tabs__link {
-  background: rgba(37, 192, 107, 0.14);
+  background: rgba(37,192,107,0.15);
   border-bottom: 2px solid #25c06b;
   font-weight: 600;
-  color: #000000;
+  color: #000;
 }
 
-/* remove default underline animation */
-.md-tabs__link::after {
-  display: none;
+.md-tabs__link:hover {
+  background: rgba(0,0,0,0.05);
 }
 
 
 /*******************************************************
- * SIDEBAR – WIDER + COMPACT
+ * SIDEBAR (WIDE + COMPACT)
  *******************************************************/
 
 .md-sidebar--primary {
   width: 260px;
   min-width: 260px;
   background: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(0,0,0,0.08);
 }
 
-/* section label (e.g. “Intégrations”) */
 .md-sidebar--primary .md-nav__title {
   font-size: 0.78rem;
+  padding: 0.6rem 1rem 0.3rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 0.6rem 1rem 0.25rem 1rem;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0,0,0,0.45);
 }
 
-/* main links */
 .md-sidebar--primary .md-nav__link {
-  padding: 0.40rem 1rem;
+  padding: 0.4rem 1rem;
   font-size: 0.92rem;
   border-radius: 6px;
 }
 
-/* children links (level 2) */
 .md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
   padding-left: 1.4rem;
   font-size: 0.85rem;
 }
 
-/* hover + active */
 .md-sidebar--primary .md-nav__link:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0,0,0,0.04);
 }
 
 .md-sidebar--primary .md-nav__link--active {
-  background: rgba(37, 192, 107, 0.15);
+  background: rgba(37,192,107,0.14);
   border-left: 3px solid #25c06b;
   padding-left: calc(1rem - 3px);
   font-weight: 600;
 }
 
-/* keep normal text font for titles/links; DO NOT touch .md-icon */
-.md-sidebar--primary .md-nav__title,
-.md-sidebar--primary .md-nav__link {
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* FIX FONT CLIPPING */
+.md-sidebar--primary *,
+.md-nav *,
+.md-nav__link,
+.md-nav__title {
+  font-family: "Roboto", sans-serif !important;
 }
 
 
 /*******************************************************
- * HOMEPAGE CARDS
+ * CARDS, TABLES, BLOCKQUOTES, CODE
  *******************************************************/
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin: 2rem 0;
 }
 
@@ -167,58 +136,18 @@ body,
   padding: 1.6rem;
   border-radius: 12px;
   background: #ffffff;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.15s, box-shadow 0.15s;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.15s;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
 }
 
-
-/*******************************************************
- * BUTTONS
- *******************************************************/
-
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.btn-primary {
-  background: #25c06b;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: #1fa85d;
-}
-
-.btn-secondary {
-  background: #ffffff;
-  border: 1px solid #25c06b;
-  color: #25c06b;
-}
-
-.btn-secondary:hover {
-  background: #eafff2;
-}
-
-
-/*******************************************************
- * TABLES, BLOCKQUOTES, CODE
- *******************************************************/
-
-.md-typeset table:not([class]) {
+.md-typeset table {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
-  overflow: hidden;
 }
 
 .md-typeset blockquote {
@@ -232,68 +161,68 @@ body,
   border-radius: 10px;
   background: #f8f9fa;
   padding: 1rem;
-  box-shadow: inset 0 0 0 1px #e6e8eb;
 }
 
 
 /*******************************************************
- * FOOTER – PREVIOUS / NEXT (COMPACT)
+ * FIXED FOOTER — ONLY UNDER CONTENT (NOT SIDEBAR)
  *******************************************************/
 
-/* base footer bar */
+/* Whole footer background */
 .md-footer {
   background: #212121;
   color: #ffffff;
 }
 
-/* navigation area with previous/next */
+/* INNER footer (Navigation controls) */
 .md-footer__inner {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0.25rem 0.5rem;
+  max-width: 980px !important;     /* align with content */
+  margin-left: auto !important;    /* push under content */
+  margin-right: 0 !important;
+  padding: 0.4rem 0.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
-/* links (previous / next) */
+/* Previous/Next buttons */
 .md-footer__link {
-  padding: 0.25rem 0.5rem;
+  padding: 0.3rem 0.5rem !important;
 }
 
-/* button wrapper */
 .md-footer__button {
-  font-size: 0.8rem;
-}
-
-/* text */
-.md-footer__title {
-  font-size: 0.78rem;
+  font-size: 0.8rem !important;
 }
 
 .md-footer__direction {
-  font-size: 0.70rem;
+  font-size: 0.7rem !important;
   opacity: 0.85;
 }
 
-/* smaller arrow icons */
+.md-footer__title {
+  font-size: 0.78rem !important;
+}
+
+/* Smaller icons */
 .md-footer__button .md-icon svg {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.75rem !important;
+  height: 0.75rem !important;
 }
 
 
 /*******************************************************
- * FOOTER META (COPYRIGHT + SOCIAL)
+ * FOOTER META (COPYRIGHT)
  *******************************************************/
 
 .md-footer-meta {
-  background: #111111;
-  color: #ffffff;
+  background: #111;
+  color: #fff;
   font-size: 0.75rem;
   padding: 0.6rem 1rem;
 }
 
 
 /*******************************************************
- * RESPONSIVE
+ * MOBILE FIXES
  *******************************************************/
 
 @media (max-width: 960px) {
@@ -303,6 +232,7 @@ body,
   }
 
   .md-footer__inner {
-    padding: 0.35rem 0.75rem;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }
