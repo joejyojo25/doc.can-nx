@@ -20,7 +20,8 @@ jobs:
         with:
           python-version: "3.x"
 
-      # INSTALL ALL REQUIRED PACKAGES (Combined for efficiency, removed 'mkdocs-tagging' as it failed to install)
+      # INSTALL ALL REQUIRED PACKAGES
+      # Removed 'mkdocs-tagging' and 'mkdocs-social-cards-plugin' as they failed to install.
       - name: Install MkDocs and Plugins
         run: |
           pip install \
@@ -33,11 +34,10 @@ jobs:
             mkdocs-literate-nav \
             markdown-include \
             mkdocs-glightbox \
-            mkdocs-awesome-pages-plugin \
-            mkdocs-social-cards-plugin
+            mkdocs-awesome-pages-plugin
 
       - name: Build MkDocs Site
-        run: mkdocs build --verbose # Added --verbose to check for errors in the logs
+        run: mkdocs build --verbose
 
       - uses: actions/upload-pages-artifact@v3
         with:
