@@ -1,197 +1,129 @@
 /*******************************************************
- *  CAN’N'X — ENFORCED OVERRIDES FOR MATERIAL v9
- *  Guaranteed to override all theme styles
- *******************************************************
+ * CAN'N'X — FINAL OVERRIDES FOR MATERIAL v9
+ * Ensures: compact sidebar, fixed top menu, correct
+ * prev/next positioning INSIDE content only.
+ *******************************************************/
 
-/* Force precedence wrapper */
 :root {}
 
-
 /* ------------------------------------------------------
-   GLOBAL TYPOGRAPHY
+   TOP MENU — FIX SPACING, SIZE & ALIGNMENT
 ------------------------------------------------------ */
-.md-content {
-  max-width: 980px !important;
+
+/* Reduce top nav font + uniform spacing */
+.md-header__inner nav .md-nav__item .md-nav__link {
+  font-size: 0.82rem !important;
+  padding: 0.55rem 0.9rem !important;
 }
 
-.md-typeset {
-  font-size: 1rem !important;
-  line-height: 1.65 !important;
-}
-
-.md-typeset h1 { font-size: 2.2rem !important; margin-top: 2rem !important; }
-.md-typeset h2 { font-size: 1.6rem !important; margin-top: 1.8rem !important; }
-.md-typeset h3 { font-size: 1.3rem !important; margin-top: 1.4rem !important; }
-
-
-/* ------------------------------------------------------
-   NAVIGATION — SMALLER FONT + STRONGER ACTIVE LINK
------------------------------------------------------- */
-.md-nav__link,
-.md-nav__title {
-  font-size: 0.80rem !important;
-}
-
-.md-nav--primary .md-nav__item--active > .md-nav__link {
+/* Active tab highlight */
+.md-nav__item--active > .md-nav__link {
   font-weight: 700 !important;
   color: #00994d !important;
   border-bottom: 2px solid #00994d !important;
 }
 
+/* Item hover */
 .md-nav__link:hover {
   color: #00994d !important;
 }
 
-
-/* ------------------------------------------------------
-   TABS
------------------------------------------------------- */
-.md-tabs__item {
-  font-size: 1rem !important;
-  padding: 0.6rem 1.1rem !important;
-}
-
-.md-tabs__link {
-  padding-top: 0.4rem !important;
-  padding-bottom: 0.4rem !important;
+/* Fix top nav vertical alignment */
+.md-header__inner {
+  align-items: center !important;
 }
 
 
 /* ------------------------------------------------------
-   SIDEBAR
+   SIDEBAR — FULL COMPACT MODE
 ------------------------------------------------------ */
+
+/* Make sidebar narrower */
 .md-sidebar--primary {
-  width: 300px !important;
+  width: 260px !important;
 }
 
+/* Sidebar section titles */
 .md-nav__title {
+  font-size: 0.72rem !important;
   text-transform: uppercase !important;
   font-weight: 700 !important;
-  color: rgba(0,0,0,0.45) !important;
-  letter-spacing: 0.03em !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.6rem 1rem 0.3rem !important;
+  color: rgba(0,0,0,0.55) !important;
 }
 
+/* Sidebar links */
 .md-nav__link {
-  font-size: 0.92rem !important;
-  padding: 0.45rem 1rem !important;
+  font-size: 0.85rem !important;
+  padding: 0.35rem 1rem !important;
   border-radius: 6px !important;
 }
 
+/* Level 2 links */
 .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.6rem !important;
-  font-size: 0.88rem !important;
+  padding-left: 1.4rem !important;
+  font-size: 0.82rem !important;
   opacity: 0.9 !important;
 }
 
+/* Active item styling */
 .md-nav__link--active {
-  font-weight: 600 !important;
-  background: rgba(37,192,107,0.12) !important;
+  background: rgba(37,192,107,0.15) !important;
   border-left: 3px solid #25c06b !important;
+  padding-left: calc(1rem - 3px) !important;
+  font-weight: 600 !important;
 }
 
 
 /* ------------------------------------------------------
-   FOOTER — GREEN
+   BOTTOM PREVIOUS/NEXT INSIDE CONTENT ONLY
 ------------------------------------------------------ */
-.md-footer {
-  background-color: #00994d !important;
-  color: #ffffff !important;
-}
 
-.md-footer a {
-  color: #ffffff !important;
-  opacity: 0.85 !important;
-}
-
-.md-footer a:hover {
-  opacity: 1 !important;
-}
-
-
-/* ------------------------------------------------------
-   PREVIOUS/NEXT — LOCAL ONLY
------------------------------------------------------- */
+/* REMOVE the big green full-width bar */
 .md-footer-nav {
   display: none !important;
 }
 
-.md-content__inner + nav.md-footer-nav--local {
+/* Force compact nav inside content */
+.md-content__inner > nav.md-footer-nav--local {
   display: flex !important;
   justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: 2rem !important;
   padding: 0.6rem 1rem !important;
-  font-size: 12px !important;
-  background: #f4f4f4 !important;
-  border-radius: 8px !important;
-  border: 1px solid #eee !important;
+
+  background: #f6f6f6 !important;
+  border-radius: 10px !important;
+  border: 1px solid #e5e5e5 !important;
+
+  font-size: 13px !important;
+  max-width: 980px !important;
 }
 
+/* Ensure it never expands to sidebar width */
+.md-footer-nav--local {
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+/* Smaller arrows */
 .md-footer-nav--local svg {
-  width: 14px !important;
-  height: 14px !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Link text */
+.md-footer-nav--local a {
+  color: #333 !important;
+  font-size: 13px !important;
 }
 
 
 /* ------------------------------------------------------
-   CARDS
+   OPTIONAL — PAGE WIDTH CONSISTENCY
 ------------------------------------------------------ */
-.card-grid {
-  display: grid !important;
-  gap: 1.4rem !important;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-}
 
-.card {
-  padding: 1.6rem !important;
-  border-radius: 12px !important;
-  border: 1px solid #eee !important;
-  background: #fff !important;
-  transition: 0.15s ease !important;
-}
-
-.card:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-}
-
-
-/* ------------------------------------------------------
-   HERO SECTION
------------------------------------------------------- */
-.hero {
-  padding: 4rem 2rem !important;
-  text-align: center !important;
-  border-radius: 14px !important;
-  background: linear-gradient(135deg, #e8fbea, #ffffff 65%) !important;
-}
-
-
-/* ------------------------------------------------------
-   BLOCKQUOTES
------------------------------------------------------- */
-.md-typeset blockquote {
-  border-left: 5px solid #25c06b !important;
-  background: #f3fff7 !important;
-  padding: 0.8rem 1.2rem !important;
-  border-radius: 6px !important;
-}
-
-
-/* ------------------------------------------------------
-   CODE BLOCKS
------------------------------------------------------- */
-.md-typeset pre {
-  border-radius: 10px !important;
-  background: #f8f9fa !important;
-  padding: 1rem !important;
-  box-shadow: inset 0 0 0 1px #e6e8eb !important;
-}
-
-
-/* ------------------------------------------------------
-   TABLES
------------------------------------------------------- */
-.md-typeset table:not([class]) {
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 10px !important;
-  overflow: hidden !important;
+.md-content {
+  max-width: 980px !important;
 }
