@@ -1,3 +1,4 @@
+<!-- prettier-ignore-start -->
 <div class="hero">
 
 # Bienvenue dans la documentation Can’nX 
@@ -6,11 +7,12 @@ Porte d’entrée unique pour installer, configurer et maintenir l’écosystèm
 Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’nX et Modbus / KNX / MQTT.
 
 <div class="hero-buttons">
-<a href="getting-started/introduction.md" class="btn btn-primary">Guide de démarrage</a>
-<a href="products/overview.md" class="btn btn-secondary">Produits</a>
+  <a href="getting-started/introduction/" class="btn btn-primary">Guide de démarrage</a>
+  <a href="products/overview/" class="btn btn-secondary">Produits</a>
 </div>
 
 </div>
+<!-- prettier-ignore-end -->
 
 ---
 
