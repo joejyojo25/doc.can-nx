@@ -13,7 +13,7 @@ theme:
   language: fr
 
   extra_css:
-  - assets/stylesheets/extra.css
+  - docs/assets/extra.css
 
   # ------------------------------
   # Theme Features
