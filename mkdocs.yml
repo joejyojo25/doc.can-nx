@@ -9,12 +9,7 @@ theme:
   name: material
   language: fr
 
-extra_css:
-  - assets/extra.css
-
-  # ------------------------------
   # Theme Features
-  # ------------------------------
   features:
     - navigation.instant
     - navigation.sections
@@ -33,9 +28,7 @@ extra_css:
     - header.autohide
     - navigation.footer
 
-  # ------------------------------
   # Colors
-  # ------------------------------
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -53,23 +46,22 @@ extra_css:
         icon: material/lightbulb
         name: Mode clair
 
-  # ------------------------------
   # Typography
-  # ------------------------------
   font:
     text: Roboto
     code: Roboto Mono
 
-  # ------------------------------
   # Branding
-  # ------------------------------
   logo: assets/logo.png
   favicon: assets/favicon.png
 
 
-# ------------------------------
-# Social footer links
-# ------------------------------
+# Extra CSS (must be outside theme)
+extra_css:
+  - assets/extra.css
+
+
+# Social links
 extra:
   social:
     - icon: fontawesome/brands/linkedin
@@ -80,9 +72,7 @@ extra:
       link: https://can-nx.shop
 
 
-# ------------------------------
 # Plugins
-# ------------------------------
 plugins:
   - search:
       lang:
@@ -93,9 +83,7 @@ plugins:
   - social
 
 
-# ------------------------------
 # Markdown extensions
-# ------------------------------
 markdown_extensions:
   - admonition
   - attr_list
@@ -112,9 +100,7 @@ markdown_extensions:
       alternate_style: true
 
 
-# ------------------------------
 # NAVIGATION
-# ------------------------------
 nav:
   - Accueil: index.md
 
@@ -292,6 +278,5 @@ nav:
       - Nous contacter: contact/contact.md
       - Support technique: contact/support.md
       - Distributeurs: contact/distributors.md
-
 
 copyright: "Copyright © 2025 Can'nX – Tous droits réservés"
