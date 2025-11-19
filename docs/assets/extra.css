@@ -30,46 +30,47 @@
 
 
 /* ======================================================
-   2) COMPACT SIDEBAR (Option B)
+   2) COMPACT SIDEBAR (Option B) — UPDATED (no border)
 ====================================================== */
 
 /* Narrower sidebar */
 .md-sidebar--primary {
-  width: 260px !important;
+  width: 240px !important;   /* was 260px → now tighter */
 }
 
 /* Section titles (Produits, Intégrations…) */
 .md-nav__title {
-  font-size: 0.72rem !important;
-  padding: 0.4rem 1rem 0.25rem !important;
+  font-size: 0.70rem !important;         /* slightly smaller */
+  padding: 0.25rem 1rem 0.15rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.03em !important;
   font-weight: 600 !important;
-  color: rgba(0,0,0,0.55) !important;
+  color: rgba(0,0,0,0.50) !important;
 }
 
-/* Sidebar links */
+/* Sidebar links — tighter vertical spacing */
 .md-nav__link {
-  font-size: 0.85rem !important;
-  padding: 0.28rem 1rem !important;
-  line-height: 1.2 !important;
-  border-radius: 6px !important;
+  font-size: 0.82rem !important;
+  padding: 0.22rem 1rem !important;      /* tighter */
+  line-height: 1.15 !important;
+  border-radius: 4px !important;
 }
 
 /* Level-2 and deeper */
 .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.35rem !important;
-  font-size: 0.82rem !important;
+  padding-left: 1.25rem !important;      /* tighter indent */
+  font-size: 0.80rem !important;
   opacity: 0.92 !important;
 }
 
-/* Active */
+/* Active item — green but NO thick border */
 .md-nav__link--active {
   font-weight: 600 !important;
   background: rgba(37,192,107,0.15) !important;
-  border-left: 3px solid #25c06b !important;
-  padding-left: calc(1rem - 3px) !important;
+  border-left: none !important;          /* removed border */
+  padding-left: 1rem !important;         /* reset left padding */
 }
+
 
 
 /* ======================================================
