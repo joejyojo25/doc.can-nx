@@ -12,8 +12,8 @@ theme:
   name: material
   language: fr
 
-  # Correct override folder – DO NOT change
-  custom_dir: overrides
+  extra_css:
+  - stylesheets/extra.css
 
   # ------------------------------
   # Theme Features
